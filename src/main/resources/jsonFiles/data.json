@@ -1,0 +1,48 @@
+{
+  "callbackUri":"10.102.3.47",
+  "listData":[
+    {
+      "appNumber":"TESTARI1",
+      "wrokflowId":"123456",
+      "gcn":"",
+      "applicantId":"1698234019002887dff9e34c64e94a22b991fbd6d1059",
+      "applicantType":"MA",
+      "applicantName":"Artha Nugroho",
+
+      "listWealth":[
+        {
+          "balHistory":[
+            {
+            }
+          ]
+        },{
+          "balHistory":[
+            {
+            }
+          ]
+        }
+      ]
+    },{
+      "appNumber":"TESTARI1",
+      "wrokflowId":"123456",
+      "gcn":"",
+      "applicantId":"1698234019002887dff9e34c64e94a22b991fbd6d1059",
+      "applicantType":"JA",
+      "applicantName":"Spouse",
+
+      "listWealth":[
+        {
+          "balHistory":[
+            {
+            }
+          ]
+        },{
+          "balHistory":[
+            {
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

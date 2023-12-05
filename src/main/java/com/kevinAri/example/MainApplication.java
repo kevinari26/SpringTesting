@@ -1,6 +1,8 @@
 package com.kevinAri.example;
 
 import com.kevinAri.example.service.AppService;
+import com.kevinAri.example.service.AppService2;
+import com.kevinAri.example.service.AppService3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,10 +16,16 @@ public class MainApplication implements CommandLineRunner {
 
 	@Autowired
     AppService appService;
+    @Autowired
+    AppService2 appService2;
+    @Autowired
+    AppService3 appService3;
 
 	@Override
 	public void run(String... args) {
 		appService.execute();
+		appService2.execute();
+		appService3.execute();
 	}
 
 }
