@@ -1,13 +1,10 @@
 package com.kevinAri.example.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.kevinAri.example.model.ActionEnum;
-import com.kevinAri.example.util.CommonUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,19 +15,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.FileReader;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Array;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.YearMonth;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -59,34 +54,27 @@ public class AppService {
         private Date date_1;
         @JsonProperty("ANGKA_1")
         private Float angka11;
-        private Long angka_2;
+        private Long aNgka_2;
         private Long angka_asd_asd;
     }
 
 
     public void execute() {
         try {
-//            System.out.println(new Date().getTime());
-//            Date temp = new Date(1701321818383L);
-//            System.out.println(temp);
-//            testJsonNode();
-//            testJsonNode2();
-//            testJsonNodeSort();
+            System.out.println(new Date().getTime());
+            Date temp = new Date(1703058914783L);
 
-            List<String> temp = getPast6Month();
-            List<String> temp2 = new ArrayList<>(6);
-            int tempInt = temp.indexOf("202310");
-//            List<BigDecimal> acctBal = new ArrayList<>(6);
-            List<BigDecimal> acctBal = new ArrayList<>(Arrays.asList(BigDecimal.ZERO, BigDecimal.ZERO));
-            System.out.println(temp);
-            System.out.println(tempInt);
+            List<Class2> listClass2 = new ArrayList<>();
 
-            Date date = new Date();
-            new SimpleDateFormat("yyyy/MM/dd").format(date);
+            Class2 class2 = new Class2();
+            class2.setAngka11(10F);
+            listClass2.add(class2);
 
-            for (int i = 0; i<5000; i++) {
-                System.out.println(CommonUtil.generateUuid());
-            }
+            class2 = new Class2();
+            class2.setAngka11(11F);
+            listClass2.add(class2);
+
+            System.out.println(listClass2);
         } catch (Exception e) {
             try {
 //                errorLog(log, e);
@@ -171,14 +159,13 @@ public class AppService {
     }
 
 
-
     // date
     private void testDate() {
         try {
-//            TIMESTAMP timestamp = new TIMESTAMP(new Timestamp(System.currentTimeMillis()));
-//            Date date = timestamp.dateValue();
-//            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-//            System.out.println(dateFormat.format(date));
+            TIMESTAMP timestamp = new TIMESTAMP(new Timestamp(System.currentTimeMillis()));
+            Date date = timestamp.dateValue();
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss.SSS");
+            System.out.println(dateFormat.format(date));
 
             String sDate1="21/09/2023";
             Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
@@ -190,11 +177,6 @@ public class AppService {
             System.out.println(yearMonth.atDay(1));
             LocalDate localDate = LocalDate.now();
 
-//            getStartEnd6Month();
-//            localDate.format()
-//            Date date = Date.from(yearMonth.atEndOfMonth().atStartOfDay(ZoneId.systemDefault()).toInstant());
-//            Date date2 = new Date();
-//            System.out.println(date);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -227,17 +209,18 @@ public class AppService {
     public static Map<String, String> getStartEnd6Month() {
         LocalDate currentDate = LocalDate.now();
         YearMonth yearMonth = YearMonth.of(currentDate.getYear(), currentDate.getMonth());
-        LocalDate endDate = yearMonth.atEndOfMonth();
+        LocalDate endDate = yearMonth.minusMonths(1).atEndOfMonth();
         LocalDate startDate = yearMonth.minusMonths(6).atDay(1);
         Map<String, String> response = new HashMap<>();
         response.put("startDate", startDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+//        response.put("startDate", "20120901");
         response.put("endDate", endDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
         return response;
     }
     public static List<String> getPast6Month() {
         List<String> response = new ArrayList<>();
         LocalDate currentDate = LocalDate.now();
-        YearMonth yearMonth = YearMonth.of(currentDate.getYear(), currentDate.getMonth());
+        YearMonth yearMonth = YearMonth.of(currentDate.getYear(), currentDate.getMonth()).minusMonths(1);
         response.add(yearMonth.format(DateTimeFormatter.ofPattern("yyyyMM")));
         for (int i=0; i<5; i++) {
             yearMonth = yearMonth.minusMonths(1);
@@ -300,28 +283,12 @@ public class AppService {
     // big decimal
     private void testBigDecimal() {
         try {
-            BigDecimal bigDecimal = BigDecimal.valueOf(123.120);
+            BigDecimal bigDecimal = BigDecimal.valueOf(123.456);
+            bigDecimal = bigDecimal.setScale(6, RoundingMode.CEILING);
             System.out.println(bigDecimal);
-//            bigDecimal = bigDecimal.setScale(5, BigDecimal.ROUND_DOWN);
-//            bigDecimal = bigDecimal.setScale(7, BigDecimal.ROUND_UP);
+            bigDecimal = BigDecimal.valueOf(123.451);
+            bigDecimal = bigDecimal.setScale(6, RoundingMode.HALF_DOWN);
             System.out.println(bigDecimal);
-
-
-            bigDecimal = BigDecimal.valueOf(320000000);
-            //223999996,1853
-            BigDecimal bigDecimal100 = new BigDecimal(100L);
-            Float disc = 30F;
-            BigDecimal disc2 = BigDecimal.valueOf((100-disc)/100);
-            BigDecimal discVal = BigDecimal.valueOf(disc);
-            discVal = bigDecimal100.subtract(discVal).divide(bigDecimal100, BigDecimal.ROUND_UNNECESSARY);
-//            BigDecimal temp = bigDecimal.multiply(disc2).se;
-//            BigDecimal temp = bigDecimal.multiply(discVal);
-            BigDecimal temp = bigDecimal.multiply(discVal).divide(BigDecimal.valueOf(1.3), BigDecimal.ROUND_UP);
-//            temp = temp.setScale(5, BigDecimal.ROUND_UNNECESSARY);
-
-            System.out.println(bigDecimal);
-            System.out.println(discVal);
-            System.out.println(temp);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -331,14 +298,13 @@ public class AppService {
     // json node, object mapper
     private void testJsonNode() {
         try {
-//            String tempStr = `asd`;
-//            Object temp = objectMapper.readTree("\"test\":\"asda\"");
-
             Class1 class1 = new Class1();
-            class1.setAngka_2("angka2");
+//            class1.setAngka_2("angka2");
+            class1.setAngka_2("123");
             class1.setActionEnum(ActionEnum.REQUEST);
             System.out.println(objectMapper.writeValueAsString(class1));
             JsonNode jsonNode = objectMapper.convertValue(class1, JsonNode.class);
+            Class2 class2 = objectMapper.convertValue(class1, Class2.class);
             System.out.println(jsonNode);
 
 //            Map<String, Object> temp = objectMapper.convertValue(class1, Map.class);
@@ -350,14 +316,6 @@ public class AppService {
             jNode.set("temp2", objectMapper.createObjectNode());
             System.out.println(jNode);
 
-//            File jsonFile = new File("D:\\Project\\Java\\SpringTesting\\src\\main\\resources\\jsonFiles\\data.json");
-            Path path = Paths.get("src/main/resources/jsonFiles/", "data.json");
-            File jsonFile = path.toFile();
-            JsonNode body = objectMapper.readTree(jsonFile);
-            List<Object> listWealth = new ArrayList<>();
-            listWealth.add(class1);
-            ((ObjectNode) body.get("listData").get(0)).set("listWealth", objectMapper.convertValue(listWealth, JsonNode.class));
-            System.out.println(objectMapper.writeValueAsString(body));
 
 
 //            Map<String, String> map = new HashMap<>();
@@ -371,7 +329,6 @@ public class AppService {
             e.printStackTrace();
         }
     }
-
     private void testJsonNode2() {
         try {
             String jsonStr;
@@ -561,7 +518,17 @@ public class AppService {
             e.printStackTrace();
         }
     }
-
+    private void testJsonNodeReadFile() {
+        try {
+            //            File jsonFile = new File("D:\\Project\\Java\\SpringTesting\\src\\main\\resources\\jsonFiles\\data.json");
+            Path path = Paths.get("src/main/resources/jsonFiles/", "pefindo1.json");
+            File jsonFile = path.toFile();
+            JsonNode jsonNode = objectMapper.readTree(jsonFile);
+            System.out.println();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     private void testJsonNodeSort() {
         try {
             String jsonStr;
@@ -751,7 +718,6 @@ public class AppService {
             e.printStackTrace();
         }
     }
-
     private void testObjectMapper() {
         //            Class1 class1 = new Class1();
 ////            class1.setDate("2023-09-21");
