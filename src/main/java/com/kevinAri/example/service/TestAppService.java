@@ -10,7 +10,7 @@ import java.util.*;
 
 
 @Service
-public class AppService3 {
+public class TestAppService {
     @Autowired
     ObjectMapper objectMapper;
 
@@ -19,7 +19,10 @@ public class AppService3 {
 
     public void execute() {
         try {
-            log.info("app service 3");
+            log.info("test app service");
+//            terbilang();
+
+
         } catch (Exception e) {
             try {
                 e.printStackTrace();
@@ -27,6 +30,23 @@ public class AppService3 {
             } catch (Exception ex) {
 
             }
+        }
+    }
+
+    private void test() {
+        try {
+            int bilangan = 1234;
+            String bilStr = String.valueOf(bilangan);
+            int total = 0;
+            while (bilStr.length() > 1) {
+                total = 0;
+                for (int i = 0; i < bilStr.length(); i++) {
+                    total += Integer.parseInt(String.valueOf(bilStr.charAt(i)));
+                }
+                bilStr = String.valueOf(total);
+            }
+        } catch (Exception e) {
+
         }
     }
 

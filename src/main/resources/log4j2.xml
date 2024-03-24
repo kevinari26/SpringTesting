@@ -11,8 +11,8 @@
         <property name="logPath2">/Alpabit/logs/springTesting/service3/</property>
 <!--        <property name="logPath3">/alpabit/logs/be-mortgage/PCSM/</property>-->
 <!--        <property name="logPath4">/alpabit/logs/be-mortgage/engine/</property>-->
-        <property name="package1">com.kevinAri.example.service.AppService2</property>
-        <property name="package2">com.kevinAri.example.service.AppService3</property>
+        <property name="package1">com.kevinAri.example.service.mortgage.MortgageAppService</property>
+        <property name="package2">com.kevinAri.example.service.TestAppService</property>
 <!--        <property name="package3">com.alpabit.mortgage.service.forBPM.PCSMService</property>-->
 <!--        <property name="package4">com.alpabit.mortgage.service.MortgageServiceForEngine</property>-->
     </Properties>

@@ -35,7 +35,7 @@
 	</queryString>
 	<field name="nama" class="java.lang.String"/>
 	<field name="nomor" class="java.lang.Integer"/>
-	<field name="createdDate" class="java.sql.Timestamp"/>
+	<field name="createdDate" class="java.util.Date"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -295,7 +295,7 @@
 					<textFieldExpression><![CDATA[$F{nomor}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement mode="Transparent" x="313" y="0" width="187" height="30" forecolor="#030000" backcolor="#0673C2" uuid="7a2404e7-89b3-4434-a97b-66d06beba254">
+					<reportElement style="Table_TD" mode="Transparent" x="313" y="0" width="187" height="30" forecolor="#030000" backcolor="#0673C2" uuid="7a2404e7-89b3-4434-a97b-66d06beba254">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -312,7 +312,7 @@
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#030303"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="rtf">
 						<font size="16"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{createdDate}]]></textFieldExpression>

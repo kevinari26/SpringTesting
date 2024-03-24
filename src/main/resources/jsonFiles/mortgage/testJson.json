@@ -1,0 +1,5112 @@
+{
+  "PaymentCalendarList": {
+    "CalendarItem": [
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-02-28T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-01-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "35966.00",
+          "Value": "35966.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-12-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "71312.00",
+          "Value": "71312.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2021-11-30T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "106050.00",
+          "Value": "106050.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      },
+      {
+        "Date": "2022-03-31T00:00:00",
+        "DelinquencyStatus": "Ok",
+        "InterestRate": "21.0000",
+        "NegativeStatusOfContract": "NoNegativeStatus",
+        "OutstandingAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueAmount": {
+          "Currency": "IDR",
+          "LocalValue": "0.00",
+          "Value": "0.00"
+        },
+        "PastDueDays": "0"
+      }
+    ]
+  },
+  "WorstPastDueAmount": {
+    "Currency": "IDR",
+    "LocalValue": "0.00",
+    "Value": "0.00"
+  },
+  "WorstPastDueDays": "0"
+}

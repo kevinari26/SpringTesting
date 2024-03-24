@@ -1,14 +1,12 @@
 package com.kevinAri.example;
 
 import com.kevinAri.example.service.AppService;
-import com.kevinAri.example.service.AppService2;
-import com.kevinAri.example.service.AppService3;
+import com.kevinAri.example.service.mortgage.MortgageAppService;
+import com.kevinAri.example.service.TestAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Scanner;
 
 @SpringBootApplication
 public class MainApplication implements CommandLineRunner {
@@ -19,15 +17,15 @@ public class MainApplication implements CommandLineRunner {
 	@Autowired
     AppService appService;
     @Autowired
-    AppService2 appService2;
+    MortgageAppService mortgageAppService;
     @Autowired
-    AppService3 appService3;
+    TestAppService testAppService;
 
 	@Override
 	public void run(String... args) {
 		appService.execute();
-		appService2.execute();
-		appService3.execute();
+		mortgageAppService.execute();
+		testAppService.execute();
 	}
 
 }

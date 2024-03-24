@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.ibm.icu.text.RuleBasedNumberFormat;
+import com.ibm.icu.util.ULocale;
 import com.kevinAri.example.model.ActionEnum;
+import com.kevinAri.example.service.testing.jasper.JasperService;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,16 +16,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.ibm.icu.text.NumberFormat;
+import sun.applet.Main;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Array;
 import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.NumberFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -36,6 +42,8 @@ import java.util.regex.Pattern;
 public class AppService {
     @Autowired
     ObjectMapper objectMapper;
+    @Autowired
+    JasperService jasperService;
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -61,20 +69,13 @@ public class AppService {
 
     public void execute() {
         try {
-            System.out.println(new Date().getTime());
-            Date temp = new Date(1703058914783L);
+//            Date date = new Date();
+//            System.out.println(date.toString());
+//            System.out.println(date.getTime());
+//            System.out.println(UUID.randomUUID());
 
-            List<Class2> listClass2 = new ArrayList<>();
-
-            Class2 class2 = new Class2();
-            class2.setAngka11(10F);
-            listClass2.add(class2);
-
-            class2 = new Class2();
-            class2.setAngka11(11F);
-            listClass2.add(class2);
-
-            System.out.println(listClass2);
+//            jasperService.testJasper();
+//            fileToBase64();
         } catch (Exception e) {
             try {
 //                errorLog(log, e);
@@ -157,6 +158,26 @@ public class AppService {
         }
         return query;
     }
+    private void terbilang() {
+        // terbilang
+        ULocale locale = new ULocale("Id");
+        NumberFormat formatter = new RuleBasedNumberFormat(locale, RuleBasedNumberFormat.SPELLOUT);
+        Long number = 123456L;
+        BigDecimal number2 = new BigDecimal("123.00");
+//            String number2 = "123.123";
+        System.out.println(formatter.format(number2));
+        number = 190347800L;
+        System.out.println(formatter.format(number));
+    }
+    public static Date parseStringDateToDate(String dateStr, String parseFormat) throws ParseException {
+        try {
+            if (dateStr==null || "".equals(dateStr.trim())) return null;
+            return new SimpleDateFormat(parseFormat).parse(dateStr);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 
 
     // date
@@ -730,23 +751,5 @@ public class AppService {
 //            System.out.println(objectMapper.writeValueAsString(class2));
     }
 
-
-    public static void errorLog(Logger log, Exception e) {
-        log.error("");
-        log.error("=== Error Log ===");
-        log.error("Cause: {}", e.toString());
-        for (StackTraceElement stack : e.getStackTrace()) {
-            log.error("Stack: {}", stack);
-        }
-        Throwable rootCause = e.getCause();
-        while (rootCause!=null) {
-            log.error("RootCause: {}", rootCause.toString());
-            for (StackTraceElement stack : rootCause.getStackTrace()) {
-                log.error("Stack: {}", stack);
-            }
-            rootCause = rootCause.getCause();
-        }
-        log.error("");
-    }
 
 }

@@ -104,6 +104,13 @@
             <version>5.2.3</version>
         </dependency>
 
+        <!-- angka menjadi terbilang -->
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>58.1</version>
+        </dependency>
+
         <!-- jodconverter -->
 <!--        <dependency>-->
 <!--            <groupId>org.jodconverter</groupId>-->

@@ -6,8 +6,8 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum ActionEnum {
-    REQUEST("REQUEST"),
-    RESPONSE("RESPONSE");
+    REQUEST("REQUEST1"),
+    RESPONSE("RESPONSE1");
 
     private final String value;
 
