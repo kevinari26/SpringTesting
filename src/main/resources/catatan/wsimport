@@ -1,0 +1,7 @@
+// contoh mortgage
+wsimport -keep -s 'D:\Alpabit\ProjectPermata\Mortgage\be-ods-services\target\generated-sources' -d 'D:\Alpabit\ProjectPermata\Mortgage\be-ods-services\target\classes' -encoding UTF-8 -Xnocompile -p, com.wsimport.ods.payroll.payrollTrans -Xauthfile D:\Alpabit\ProjectPermata\Mortgage\be-ods-services\src\main\resources\authFile.auth http://permataosbuat.permatabank.com:11599/InquiryServices/GCN/Service/PayrollTransBatchByGCNInq?wsdl
+
+// contoh testing
+wsimport -s C:\Users\arisa\Downloads\test\ C:\Users\arisa\Downloads\test\CallBackBVRVExternal.wsdl
+wsimport -keep -verbose 'C:\Users\arisa\Downloads\test\CallBackBVRVExternal.wsdl'
+wsimport -keep -s C:\Users\arisa\Downloads\test\ http://10.87.225.205:13199/soa-infra/services/DigitalMortgage/DocCheckPerfios/ReportGenerateCB.service?wsdl

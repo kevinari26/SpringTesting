@@ -1,5 +1,7 @@
 //package com.kevinAri.example.service.testing.docgen;
 //
+//import com.itextpdf.text.pdf.PdfDocument;
+//import com.itextpdf.text.pdf.PdfReader;
 //import org.apache.poi.xwpf.usermodel.*;
 //import org.jodconverter.core.DocumentConverter;
 //import org.jodconverter.core.document.DefaultDocumentFormatRegistry;
@@ -8,10 +10,7 @@
 //import org.springframework.http.ResponseEntity;
 //import org.springframework.stereotype.Service;
 //
-//import java.io.ByteArrayInputStream;
-//import java.io.ByteArrayOutputStream;
-//import java.io.FileInputStream;
-//import java.io.InputStream;
+//import java.io.*;
 //import java.nio.file.Files;
 //import java.nio.file.Paths;
 //import java.util.*;
@@ -25,8 +24,11 @@
 //    private DocumentConverter documentConverter;
 //
 //
+//    public void testing() {
+////        pdfToHtml();
+//    }
 //
-//    public Object testDocGen () {
+//    private Object testDocGen() {
 //        try {
 //            Map<String, String> parameters = new HashMap<>();
 ////            parameters.put("param01", "parameter1");
@@ -78,6 +80,23 @@
 //        }
 //    }
 //
+//    private void pdfToHtml() {
+//        try {
+////            PdfDocument pdfDocument = new PdfDocument();
+////            PdfReader reader = new PdfReader("src/file.pdf");
+////            reader.
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            documentConverter
+//                    .convert(new File("C:\\Users\\arisa\\Downloads\\Doc Docgen", "kprBijak.docx"))
+//                    .as(DefaultDocumentFormatRegistry.DOCX)
+//                    .to(baos).as(DefaultDocumentFormatRegistry.PDF).execute();
+////                    .as(DefaultDocumentFormatRegistry.PDF)
+////                    .to(baos).as(DefaultDocumentFormatRegistry.XHTML).execute();
+//            System.out.println(baos);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 //    // cara lama (langsung buka file rtf dalam bentuk byte, lalu find and replace langsung parameternya)
 //    public byte[] generatePdfFromRtfOld (Map<String, String> parameters, String templatePath) {
 //        try {

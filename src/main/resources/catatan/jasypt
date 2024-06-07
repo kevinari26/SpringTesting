@@ -1,0 +1,5 @@
+// encrypt
+mvn jasypt:encrypt-value -Djasypt.encryptor.password=alpabitomfaiz -Djasypt.plugin.value=Password
+
+
+

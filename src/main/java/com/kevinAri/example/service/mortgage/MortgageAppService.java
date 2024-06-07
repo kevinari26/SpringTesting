@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.kevinAri.example.util.CommonUtil;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.fit.pdfdom.PDFDomTree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +16,12 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.ZoneId;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -36,27 +32,21 @@ public class MortgageAppService {
     ObjectMapper objectMapper;
 
     @Autowired
-    MortgageApp2Service mortgageApp2Service;
+    ScriptTestingService scriptTestingService;
+    @Autowired
+    MortgageApp3Service mortgageApp3Service;
+//    @Autowired
+//    DocgenService docgenService;
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 
     public void execute() {
         try {
-//            unzipFile();
-//            readBvRv();
-//            parsePefindoBigReport();
-//            readJson();
-//            mortgageApp2Service.testIncreaseEfficiency();
-
-//            cekDocgen();
-
-            Map<String, Object> map = new HashMap<>();
-            System.out.println(map.size());
-            map.put("ok", null);
-            System.out.println(map.size());
-            map.put("ok2", "null");
-            System.out.println(map.size());
+//            findAndReplacePcsm();
+//            pdfToHtml();
+//            zipFile();
+            mortgageApp3Service.execute();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -69,7 +59,7 @@ public class MortgageAppService {
         return res;
     }
 
-    // cek docgen
+    // docgen
     private void cekDocgen() {
         String templateFieldsStr = "pelunasangpdesc, biayanotaripnpbht, biayatransferujroh, pelunasanahpdesc, biayanotaripk, biayatransfer, proptype, biayalegal, biayaujroh, biayanotarilou, premilifeins, insname, biayanotariroya, pelunasanhpdesc, jenisjaminan, biayanotariceksert, biayanotariapht, biayanotariskmht, biayaappraisal, premifireins";
         String catalogFieldsStr = "pelunasanahp, uangmukasyh, pelunasanahpdesc, biayanotaripk, alamatheader, biayalegal, angsuranbanding, biayanotariroya, cuhmcity, jenisjaminan, biayanotariapht, cuhmprop, pelunasangpdesc, cuhmcamat, biayanotaripnpbht, cpinterestbanding, premilifeins, rtrw, pelunasangp, biayaappraisal, cplimitbanding, city, biayatransfer, cuhmlurah, proptype, postalcd, fixedperbanding, pelunasanto, dendaketerlambatan, pelunasanhp, pelunasantodesc, insname, acuanbunga, districtcd, inscompname, adminfeefinal, cuhmzipcode, biayanotariskmht, tenormmbanding, address1, noref, biayanotarilou, pelunasanhpdesc, rtrw1, biayanotariceksert, subprodtype, subdistrictcd, cufullnm, premifireins";
@@ -85,6 +75,8 @@ public class MortgageAppService {
 
 
 
+
+
     // read file
     private String readJson() throws Exception {
 //        File jsonFile = Paths.get("src/main/resources/jsonFiles/mortgage/", "addtl_info.json").toFile();
@@ -94,7 +86,6 @@ public class MortgageAppService {
         System.out.println();
         return "";
     }
-
     private void readExcel() throws Exception {
         File file = Paths.get("C:\\Users\\arisa\\Downloads\\MortgageFile\\Pervios\\2N641678680151389", "2N641678680151389.xlsx").toFile();
         Workbook workbook = new XSSFWorkbook(file);
@@ -113,7 +104,6 @@ public class MortgageAppService {
         System.out.println(excelNumberStrToBigDecimal(temp, 0));
 
     }
-
     private BigDecimal excelNumberStrToBigDecimal(String numberStr, Integer scale) {
         try  {
             // handling excel scientific format (ex: 1.03354223774194E8)
@@ -138,16 +128,15 @@ public class MortgageAppService {
             return null;
         }
     }
-
     private void fileToBase64() {
         try {
-            // file to base64
+            // file to base64.txt
             Path path = Paths.get("C:\\Users\\arisa\\Downloads\\MortgageFile\\Pervios\\2N641678680151389", "2N641678680151389.xlsx");
             File file = path.toFile();
             byte[] fileContent = Files.readAllBytes(file.toPath());
             String base64 = Base64.getEncoder().encodeToString(fileContent);
 
-            // base64 to file
+            // base64.txt to file
             File outputFile = new File("C:\\Users\\arisa\\Downloads\\MortgageFile\\Pervios\\2N641678680151389", "test.xlsx");
             FileOutputStream outputStream = new FileOutputStream(outputFile);
             outputStream.write(Base64.getDecoder().decode(base64));
@@ -158,7 +147,6 @@ public class MortgageAppService {
 
         }
     }
-
     private void readBvRv() {
         try {
 //            String bvFileBase64 = "DQoNCkJWS1BSMDk4NzAxMjMwOTIxXzc7MjAyNC0wMi0xMjsxOTcwLTAxLTAxOzIwMjQtMDItMTM7S1BSMDk4NzAxMjMwOTIxO1RSSU8gRkVSRElBTlNZQUg7O1BUIFNBUkFOQSBCRVJLQUggTklBR0E7SkwuIEpBVElNQUtNVVIgIE5PLiAzNiBKQVRJTUFLTVVSIFBPTkRPSyBHRURFIEJFS0FTSSAgS09UQS4gMTc0MTM7MTc0MTM7Ozs7MDE7MTA7UEFLIFRSSU8gRkVSRElBTlNZQUg7MDE7MTs7Ozs7Ozs7Ozs7OzsxMDtQQUsgU0FNU1VESU47MDA7MTs7Ozs7Ozs7Ozs7OzsxMDtQQUsgSlVOQUVESSA7MDA7MTs7Ozs7Ozs7Ozs7OzswMjswMTswMTsyOzU7NTswMTswMTswMjswMztQRVI7MDA0OzAzOzAxOzAxOzAyOzAyOzAxO0NPTVBVVEVSOzA4MjEyMTIxMDA2ODs3MDsxO1NJMSBBREwgQVBQLiBJTkZPIEFQUCBCQUhXQSBBUFAgQk5SIE1FTkdBSlVLQU4gQVBMSUtBU0kgREFOIEJOUiBCRUtFUkpBIERJIEtOVFIgVFNCIDtTSTIgQURMIEtBUllBV0FOIFJTIE1BU01JVFJBLiBTSTIgVERLIEtFTkFMIEFQUCBUVFBJIFRBSFUgTkFNQSBLTlRSIDtTSTMgQURMIFNUQUYgS0VMVVJBSEFOIEpBVElNQUtNVVIuIFNJMyBUREsgS0VOQUwgQVBQIFRUUEkgVEFIVSBOQU1BIEtOVFIgO0FQUCBCTlIgTUVOR0FKVUtBTiBBUExJS0FTSSBEQU4gQk5SIEJFS0VSSkEgREkgS05UUiBUU0IgU0JHIEFTSVNURU4gTUFOQUdFUi4gQkRHIFVTQUhBIEtVTElORVIgLkFLVEZGUyBEQU4gQUxBVCBLRVJKQSBBREEuIFBMQU5HIEtOVFIgQURBLiBMR0tHTiBLTlRSIFBFUlRPS09BTi4gSU5GTyBTSTEgSlVNTEFIIEtBUllBV0FOIERJIFBSU0ggVFNCIEFEQSAyMCAgT1JHIFRUUCAgU0FBVCBWSVNJVCBBREEgNiBPUkFORyBLQVJZQVdBTiBURVJMSUhBVCBESSBLTlRSIFRTQiAuIFNJMi9LQVJZQVdBTiBSUyBNQVNNSVRSQSBEQU4gU0kzL1NUQUYgS0VMVVJBSEFOIEpBVElNQUtNVVIuICBLTkRTSSBLTlRSIEJBSUsgUEVSTUFORU4gLiBQSE9UTyBQTEFORyAgU0FCQU5BIEFEQUxBSCBOQU1BIEJSQU5EIFBSU0ggVFNCLiAgDQo=";
@@ -176,7 +164,6 @@ public class MortgageAppService {
 
         }
     }
-
     private void unzipFile() throws Exception {
         File zipFile = new File("C:\\Users\\arisa\\Downloads\\MortgageFile\\BVRV\\Request\\Sample Request", "testZip.zip");
 
@@ -201,7 +188,6 @@ public class MortgageAppService {
         zis.closeEntry();
         zis.close();
     }
-
     private void parsePefindoBigReport() throws Exception {
         // open file
         byte[] fileByte = Files.readAllBytes(Paths.get("D:\\Alpabit\\ProjectPermata\\responseBigReport.txt"));
@@ -217,5 +203,46 @@ public class MortgageAppService {
 //        tempMap.put("key2", "val2");
 //        System.out.println(xmlMapper.writeValueAsString(tempMap));
     }
+    private void findAndReplacePcsm() throws Exception {
+        String directory = "D:\\Alpabit\\ProjectPermata\\Mortgage\\config-repository\\configCallWS\\services";
+        String inFilePath = directory + "\\PCSM\\PCSM_BMCC_MAIN.xml";
+        String outFilePath = directory + "\\output.xml";
+        BufferedReader reader = new BufferedReader(new FileReader(inFilePath));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outFilePath));
 
+        String line = reader.readLine();
+        boolean replaceWithFieldName = true;
+        while (line != null) {
+            // replace dengan field name
+            if (replaceWithFieldName) {
+                int start = line.indexOf("<");
+                int end = line.indexOf(">");
+                String fieldName = line.substring(start+1, end);
+                writer.write(line.replace("?", fieldName) + "\n");
+            }
+            // replace dengan -9
+            else {
+                writer.write(line.replace("?", "-9") + "\n");
+            }
+            line = reader.readLine();
+        }
+        reader.close();
+        writer.close();
+    }
+    private void pdfToHtml() throws Exception {
+        PDDocument pdf = PDDocument.load(new File("C:\\Users\\arisa\\Downloads\\download.pdf"));
+        PDFDomTree parser = new PDFDomTree();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        Writer output = new PrintWriter(baos, true);
+        parser.writeText(pdf, output);
+        output.close();
+        pdf.close();
+
+//        File outputFile = new File("C:\\Users\\arisa\\Downloads", "kprBijak.html");
+        File outputFile = new File("C:\\Users\\arisa\\Downloads", "base64.txt html2.txt");
+        FileOutputStream outputStream = new FileOutputStream(outputFile);
+        outputStream.write(Base64.getEncoder().encode(baos.toByteArray()));
+//        outputStream.write(baos.toByteArray());
+        outputStream.close();
+    }
 }

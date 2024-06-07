@@ -4,25 +4,34 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.TextNode;
 import com.ibm.icu.text.RuleBasedNumberFormat;
 import com.ibm.icu.util.ULocale;
 import com.kevinAri.example.model.ActionEnum;
 import com.kevinAri.example.service.testing.jasper.JasperService;
+import com.kevinAri.example.service.testing.test.OnlineTestService;
+import com.kevinAri.example.util.CommonUtil;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import oracle.sql.TIMESTAMP;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import com.ibm.icu.text.NumberFormat;
 import sun.applet.Main;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -34,8 +43,10 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -44,6 +55,8 @@ public class AppService {
     ObjectMapper objectMapper;
     @Autowired
     JasperService jasperService;
+    @Autowired
+    OnlineTestService onlineTestService;
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -65,7 +78,33 @@ public class AppService {
         private Long aNgka_2;
         private Long angka_asd_asd;
     }
+    @Setter
+    @Getter
+    @AllArgsConstructor
+    @ToString
+    static class Class3 {
+        private Date date;
+        private BigDecimal bigDecimal;
+    }
 
+
+    public Future<Integer> testFuture(ExecutorService executor) {
+//        return executor.submit(() -> {
+//            Thread.sleep(1000);
+//            return 10;
+//        });
+        return new FutureTask<Integer>(() -> {
+            System.out.println("test");
+            return 0;
+        });
+    }
+
+    public FutureTask<Integer> testFutureTask() {
+        return new FutureTask<Integer>(() -> {
+            System.out.println("test");
+            return 0;
+        });
+    }
 
     public void execute() {
         try {
@@ -74,8 +113,16 @@ public class AppService {
 //            System.out.println(date.getTime());
 //            System.out.println(UUID.randomUUID());
 
-//            jasperService.testJasper();
-//            fileToBase64();
+            FutureTask<String> ft = new FutureTask<>(() -> "foo");
+//            ft.run();
+
+            ExecutorService executorService = Executors.newFixedThreadPool(2);
+            executorService.submit(ft);
+
+            Future<Integer> future = testFuture(executorService);
+//            future.();
+//            ft.
+
         } catch (Exception e) {
             try {
 //                errorLog(log, e);
@@ -87,6 +134,7 @@ public class AppService {
         }
     }
 
+
     /* JASYPT
     java -cp jasypt-1.9.3.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input=test password=pass algorithm=PBEWITHHMACSHA512ANDAES_256
     mvn jasypt:encrypt-value -Djasypt.encryptor.password="alpabitomfaiz" -Djasypt.plugin.value="welcome1"
@@ -97,6 +145,18 @@ public class AppService {
     di setenv tomcat
     export JASYPT_ENCRYPTOR_PASSWORD="alpabitomfaiz"
     */
+    // testing
+    private void testLogging() {
+        log.info("hari ini");
+        for (int i=0; i<10; i++) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int j=0; j<100; j++) {
+                stringBuilder.append(CommonUtil.generateUuid());
+            }
+            log.info(stringBuilder.toString());
+        }
+    }
+
     // function
     private String randomNumber() {
         Random r = new Random();
@@ -177,8 +237,6 @@ public class AppService {
             return null;
         }
     }
-
-
 
     // date
     private void testDate() {
@@ -299,6 +357,47 @@ public class AppService {
         temp = temp.replaceAll("APPNUMBER", "testAri2");
         System.out.println(temp);
 //            System.out.println(temp.get("test2").toString());
+    }
+    public static void testRegex2() {
+        String temp = "[%=applied_fac_lmt_amt_TERBILANG%]";
+        temp = "applied_fac_lmt_amt_TERBILANG";
+        temp = "TERBILANG_applied_fac_lmt_amt";
+//        temp = "ok_TERBILANG_applied_fac_lmt_amt";
+//        Pattern pattern = Pattern.compile(String.format("(?i)%s$", "terbilang"));
+//        Pattern pattern = Pattern.compile(String.format("(?i)^%s", "terbilang"));
+        Pattern pattern = Pattern.compile(String.format("(?i)^\\w+%s\\w+$", "terbilang"));
+        Matcher matcher = pattern.matcher(temp);
+        if (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+
+//        matcher = pattern.matcher(temp);
+//        if (matcher.find()) {
+//            System.out.println(matcher.group());
+//        }
+        System.out.println("ok");
+    }
+    private boolean isXlsExtension(String fileName) {
+        String[] temp = fileName.split("\\.");
+        String fileExtension = temp[temp.length-1];
+        Pattern pattern = Pattern.compile("(?i)^xls$");
+        Matcher matcher = pattern.matcher(fileExtension);
+        return matcher.find();
+    }
+    public static void testRegex3() {
+        String temp = "[%=applied_fac_lmt_amt_TERBILANG%]";
+        temp = "applied_fac_lmt_amt_TERBILANG";
+        temp = "XLs";
+//        temp = "ok_TERBILANG_applied_fac_lmt_amt";
+//        Pattern pattern = Pattern.compile(String.format("(?i)%s$", "terbilang"));
+//        Pattern pattern = Pattern.compile(String.format("(?i)^%s", "terbilang"));
+        Pattern pattern = Pattern.compile("(?i)xls");
+        Matcher matcher = pattern.matcher(temp);
+        if (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+
+        System.out.println("ok");
     }
 
     // big decimal
@@ -751,5 +850,18 @@ public class AppService {
 //            System.out.println(objectMapper.writeValueAsString(class2));
     }
 
+    // file
+    private void base64ToPdf() throws Exception {
+        Path path = Paths.get("src/main/resources/base64file/", "base64.txt");
+        String base64 = new String(Files.readAllBytes(path));
+        byte[] fileByte = Base64.getDecoder().decode(base64);
+
+        // write
+        FileOutputStream outputStream = new FileOutputStream("C:\\Users\\arisa\\Downloads\\result.pdf");
+        outputStream.write(fileByte);
+        outputStream.close();
+
+        System.out.println("base64ToPdf done");
+    }
 
 }

@@ -1,0 +1,38 @@
+cara config properties lewat file context
+1. buat file sesuai nama project di dalam folder conf/Catalina/localhost/<projectName>.xml
+2. isinya
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Environment name="spring.config.location" value="file:/path/to/your/application/properties/file/" type="java.lang.String"/>
+    <Environment name="spring.config.location" value="classpath:/file/" type="java.lang.String"/>
+    <Environment name="spring.config.location" value="properties/file/" type="java.lang.String"/>
+</Context>
+
+cara config properties setenv
+1. buat file setenv.bat (windows), setenv.sh (linux)
+2. isinya
+export SPRING_CONFIG_LOCATION=%CATALINA_HOME%/properties
+3. letakkan file properties di dalam folder properties
+
+cd "C:\Program Files\Apache Software Foundation\Tomcat 9.0_server_testing_2"
+Get-Content "logs/server_testing_2-stdout.2023-11-22.log -Wait -Tail 10
+Get-Content server_testing_2-stdout.2023-11-22.log -Wait -Tail 10
+
+
+
+// setting lain
+set CLASSPATH=%CATALINA_HOME%\properties
+
+
+
+
+config jasypt:
+- kalau di VM options
+-Djasypt.encryptor.password=supersecretz
+
+- kalau di setenv.bat atau setenv.sh
+export JASYPT_ENCRYPTOR_PASSWORD=supersecretz
+
+- di setenv.sh
+export JASYPT_ENCRYPTOR_PASSWORD="alpabitomfaiz"
+

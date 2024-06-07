@@ -27,11 +27,11 @@
                      filePattern="${logPath}${filePattern}">
             <PatternLayout pattern="${fileLayout}" />
             <Policies>
-                <!--                <OnStartupTriggeringPolicy />-->
+<!--                <OnStartupTriggeringPolicy />-->
                 <TimeBasedTriggeringPolicy />
                 <SizeBasedTriggeringPolicy size="10 MB" />
             </Policies>
-            <!--            <DefaultRolloverStrategy max="1" />-->
+<!--            <DefaultRolloverStrategy min="0" max="10"/>-->
         </RollingFile>
 
         <RollingFile name="fileLog1"
@@ -75,16 +75,16 @@
             <AppenderRef ref="fileLog" />
         </Root>
 
-        <Logger level="info" name="${package1}" additivity="false">
-            <AppenderRef ref="console" />
-            <AppenderRef ref="fileLog" />
-            <AppenderRef ref="fileLog1" />
-        </Logger>
-        <Logger level="info" name="${package2}" additivity="true">
-            <AppenderRef ref="console" />
+<!--        <Logger level="info" name="${package1}" additivity="false">-->
+<!--            <AppenderRef ref="console" />-->
 <!--            <AppenderRef ref="fileLog" />-->
-            <AppenderRef ref="fileLog2" />
-        </Logger>
+<!--            <AppenderRef ref="fileLog1" />-->
+<!--        </Logger>-->
+<!--        <Logger level="info" name="${package2}" additivity="true">-->
+<!--            <AppenderRef ref="console" />-->
+<!--&lt;!&ndash;            <AppenderRef ref="fileLog" />&ndash;&gt;-->
+<!--            <AppenderRef ref="fileLog2" />-->
+<!--        </Logger>-->
 <!--        <Logger level="info" name="${package3}" additivity="false">-->
 <!--            <AppenderRef ref="console" />-->
 <!--            <AppenderRef ref="fileLog" />-->

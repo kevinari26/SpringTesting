@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 
 @Service
-public class MortgageApp2Service {
+public class ScriptTestingService {
     @Autowired
     ObjectMapper objectMapper;
 
@@ -22,7 +22,7 @@ public class MortgageApp2Service {
 
 
     public void testIncreaseEfficiency() throws Exception {
-        test2();
+//        test2();
 
     }
 
