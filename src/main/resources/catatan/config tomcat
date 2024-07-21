@@ -11,7 +11,7 @@ cara config properties lewat file context
 cara config properties setenv
 1. buat file setenv.bat (windows), setenv.sh (linux)
 2. isinya
-export SPRING_CONFIG_LOCATION=%CATALINA_HOME%/properties
+    export SPRING_CONFIG_LOCATION=%CATALINA_HOME%/properties
 3. letakkan file properties di dalam folder properties
 
 cd "C:\Program Files\Apache Software Foundation\Tomcat 9.0_server_testing_2"

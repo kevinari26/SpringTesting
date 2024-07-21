@@ -1,0 +1,1592 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root id="be-mortgage/mortgage">
+    <!-- submission -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="convertEconomicSectorCd" type="query">
+        <query>
+            <![CDATA[
+				select economic_sector_mortgage_cd
+				from edm_economic_sector_mortgage where economic_sector_aml_cd = :economicSectorCd
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getDocMasterSubmission" type="query">
+        <query>
+            <![CDATA[
+				select edm.doc_cd, edm.doc_category_cd, edm.doc_name_en
+				from edm_doc_master edm
+				where edm.doc_cd in ('KT000001', 'SE0000001')
+			]]>
+        </query>
+    </operation>
+
+
+
+    <!-- for BPM -->
+    <!-- dedup -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getApplicationExistingMortgageByNikAndIdTypeAndAppNumber" type="query">
+        <query>
+            <![CDATA[
+				select ad.stage_detail_cd, nvl(lv.IS_DEDUP_NOT_ELIGIBLE_FLAG,'Y') as description
+                from app_detail ad
+				left join applicant_identification ai
+					on ad.app_number = ai.app_number
+                left join mtg_master_stage lv on lv.ref_cd = ad.stage_detail_cd
+				where ai.ID_NUMBER in(select id_number from applicant_identification where app_number =:appNumber)
+                and ai.id_type = :idType and ad.app_number <> :appNumber
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- kyc -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryKyc" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+					master.APP_NUMBER, master.IS_ETB_FLAG,
+					appdet.FULL_NAME_ID, appdet.PLACE_OF_BIRTH, appdet.DATE_OF_BIRTH, appdet.LIVENESS_ID,
+					CONCAT (appdress.ADDRESS_1,appdress.ADDRESS_2) AS ADDRESS, appdress.DISTRICT_CD, appdress.SUB_DISTRICT_CD, appdress.ADDRESS_TYPE,
+					apprel.APPLICANT_TYPE,
+					ai.ID_NUMBER, cr.REF_DESC_BAHASA as GENDER,
+                    case when appdet.MARITAL_STATUS_CD = 'M' then 'KAWIN'
+                    when appdet.MARITAL_STATUS_CD = 'S' then 'BELUM KAWIN'
+                    when appdet.MARITAL_STATUS_CD = 'W' then 'CERAI MATI'
+					when appdet.MARITAL_STATUS_CD = 'D' then 'CERAI HIDUP'
+                    end as MARITAL_STATUS
+				FROM
+					APP_MASTER master
+				INNER JOIN APPLICANT_DETAIL appdet
+					ON appdet.APP_NUMBER = master.APP_NUMBER
+				INNER JOIN APPLICANT_ADDRESS appdress
+					ON appdress.APPLICANT_ID = appdet.APPLICANT_ID
+				INNER JOIN APP_APPLICANT_REL apprel
+					ON apprel.APPLICANT_ID = appdet.APPLICANT_ID
+				INNER JOIN APPLICANT_IDENTIFICATION ai
+					ON ai.APPLICANT_ID = appdet.APPLICANT_ID
+                LEFT JOIN COMMON_REF cr ON cr.REF_CD = appdet.GENDER_CD and cr.REF_KEY = 'SEX'
+                LEFT JOIN LOVPARAMS lp on lp.LOVKEY = appdet.MARITAL_STATUS_CD and lp.LOVGROUP = 'STATUS PERKAWINAN'
+				WHERE
+					master.APP_NUMBER = :appNumber
+					AND apprel.APPLICANT_TYPE IN ('MA', 'JA')
+					AND appdress.ADDRESS_TYPE IN ('01')			]]>
+        </query>
+    </operation>
+
+
+    <!-- amlock -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryAml" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+                    ad.FULL_NAME_ID, ad.DATE_OF_BIRTH, ad.MARITAL_STATUS_CD, ad.IS_PREMARITAL_AGRMT_FLAG,
+                    ad.DECLARED_DEED_ESTD_NUMBER ESTD_NUMBER, ad.DECLARED_BUS_LICENSE_DATE ESTD_DATE,
+					ar.APPLICANT_TYPE, ae.COMPANY_NAME, ae.EMPLOYMENT_TYPE, ai.ID_NUMBER, ai.ID_TYPE
+				FROM APP_MASTER m
+				INNER JOIN APPLICANT_DETAIL ad ON ad.APP_NUMBER = m.APP_NUMBER
+				INNER JOIN APPLICANT_EMPLOYMENT ae ON ae.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN APPLICANT_IDENTIFICATION ai ON ai.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN APP_APPLICANT_REL ar ON ar.APPLICANT_ID = ad.APPLICANT_ID
+				WHERE m.APP_NUMBER = :appNumber
+                    AND ar.APPLICANT_TYPE IN ('MA', 'JA')
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForProcessAml" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+					ar.APPLICANT_ID, ar.APPLICANT_TYPE, ae.COMPANY_NAME,
+                    ad.DECLARED_DEED_ESTD_NUMBER ESTD_NUMBER, ad.DECLARED_ESTD_DATE,
+                    ad.BUS_LICENSE_NUMBER, ad.DECLARED_BUS_LICENSE_DATE ESTD_DATE,
+                    ai.ID_TYPE, ad.FULL_NAME_ID, ai.ID_NUMBER, ad.DATE_OF_BIRTH
+				FROM APPLICANT_DETAIL ad
+				INNER JOIN APPLICANT_EMPLOYMENT ae ON ae.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN APPLICANT_IDENTIFICATION ai ON ai.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN APP_APPLICANT_REL ar ON ar.APPLICANT_ID = ad.APPLICANT_ID
+				WHERE ad.APP_NUMBER = :appNumber
+					AND ar.APPLICANT_TYPE IN ('MA', 'JA')
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- nibc -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryNibc" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+					master.APP_NUMBER, master.IS_JOINT_INCOME_FLAG,
+					appment.COMPANY_NAME, appdet.BUS_LICENSE_NUMBER, appdet.MARITAL_STATUS_CD, appdet.IS_PREMARITAL_AGRMT_FLAG,
+					apption.ID_NUMBER, apption.ID_TYPE,
+					appment.EMPLOYMENT_TYPE,
+					apprel.APPLICANT_TYPE
+				FROM
+					APP_MASTER master
+				INNER JOIN
+					APPLICANT_DETAIL appdet
+				ON
+					appdet.APP_NUMBER = master.APP_NUMBER
+				INNER JOIN
+					APPLICANT_IDENTIFICATION apption
+				ON
+					apption.APPLICANT_ID = appdet.APPLICANT_ID
+				INNER JOIN
+					APPLICANT_EMPLOYMENT appment
+				ON
+					appment.APPLICANT_ID = appdet.APPLICANT_ID
+				INNER JOIN
+					APP_APPLICANT_REL apprel
+				ON
+					apprel.APPLICANT_ID = appdet.APPLICANT_ID
+				WHERE
+					master.APP_NUMBER = :appNumber
+				AND
+					apprel.APPLICANT_TYPE IN ('MA', 'JA')
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- income -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryIncome" type="query">
+        <query>
+            <![CDATA[
+				SELECT m.IS_JOINT_INCOME_FLAG, ad.BPJS_USERNAME, ad.BPJS_PASSWORD, ad.MARITAL_STATUS_CD, ad.IS_PREMARITAL_AGRMT_FLAG,
+					ae.COMPANY_NAME, ae.EMPLOYMENT_STATUS_CD, ae.EMPLOYMENT_TYPE, ai.ID_NUMBER, id.AS_DECLARED_INCOME_AMT, ar.APPLICANT_TYPE,
+					ae.EMPLOYMENT_STATUS_CD, ad.MARITAL_STATUS_CD, ad.IS_PREMARITAL_AGRMT_FLAG, m.IS_JOINT_INCOME_FLAG
+				FROM APP_MASTER m
+				INNER JOIN APPLICANT_DETAIL ad
+					ON ad.APP_NUMBER = m.APP_NUMBER
+				INNER JOIN APPLICANT_EMPLOYMENT ae
+					ON ae.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN APPLICANT_IDENTIFICATION ai
+					ON ai.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN INCOME_DETAIL id
+					ON id.APPLICANT_ID = ad.APPLICANT_ID
+				INNER JOIN APP_APPLICANT_REL ar
+					ON ar.APPLICANT_ID = ad.APPLICANT_ID
+				WHERE m.APP_NUMBER=:appNumber AND ar.APPLICANT_TYPE IN ('MA', 'JA')
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- instinct -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryInstinct" type="query">
+        <query>
+            <![CDATA[
+				select
+					'PER' as "organisation",
+					'ID' as "countryCode",
+					m.app_number as "applicationNumber",
+					m.app_date as "appDate",
+					ar.applicant_type as "applicantType",
+					m.open_branch_cd as "branch",
+					'PERMATA' as "disbursementBank",
+					m.app_number as "applicationFormId",
+					ad.is_syariah_flag as "facilityCategory",
+					ai.id_number as "idNumber1",
+					'' as "idNumber3",
+					ad.full_name_id as "firstName",
+					ad.gender_cd as "sex",
+					ad.date_of_birth as "dateOfBirth",
+					ads.address_1 as "homeAddress1",
+					ads.address_2 as "homeAddress2",
+					ads.sub_district_cd as "homeAddress3",
+					ads.district_cd as "homeAddress4",
+					ads.city_cd as "homeAddress5",
+					ads.postal_cd as "homePostCode",
+					concat(ac.phone_area_home,ac.home_number) as "homePhoneNumber",
+					ac.handphone_number as "mobilePhoneNumber",
+					ae.company_name as "companyName",
+					adsc.address_1 as "companyAddress1",
+					adsc.address_2 as "companyAddress2",
+					adsc.sub_district_cd as "companyAddress3",
+					adsc.district_cd as "companyAddress4",
+					adsc.city_cd as "companyAddress5",
+					adsc.postal_cd as "companyPostCode",
+					concat(ac.phone_area_work,ac.work_number) as "companyPhoneNumber",
+					ad.nationality_cd as "userField1",
+					ad.number_dependent as "userField3",
+					ad.mother_maiden_name as "userField4",
+					'' as "userField5",
+					'' as "userField6",
+					ad.last_education_lvl as "userField8",
+					'' as "userField12",
+					ae.employment_type as "userField13",
+					ae.length_of_work_year as "userField14",
+					ae.position_cd as "userField15",
+					ae.employment_status_cd as "userField16",
+					'' as "userField17",
+					ad.place_of_birth as "userField19",
+					ad.is_premarital_agrmt_flag as "prenup",
+					ad.marital_status_cd as "married",
+					case when m.referal_type = 'DE002' or m.referal_type = 'BR001' then m.referal_group_code
+					else null end as "referalGroupCode",
+                    s.sales_id as "salesId",
+					s.full_name as "salesFirstName",
+					'' as "mscCode",
+					'' as "mscName",
+					'' as "channel",
+                    prj.address_line1 as "addressLine1",
+                    prj.address_line2  as "addressLine2",
+                    prj.kelurahan_name as "kelurahanName",
+                    prj.kecamatan_name as "kecamatanName",
+                    prj.dati2_name as "dati2Name",
+                    prj.city_name as "cityName",
+                    prj.postal_code as "postalCode",
+                    ac.email_address as "userField9",
+                    incdtl.as_declared_income_amt as "userField10",
+                    m.pool_branch_cd as "poolBranchCode",
+
+					adsc01.address_1 as "ktpAddress1",
+					adsc01.address_2 as "ktpAddress2",
+					adsc01.rt_rw as "ktpRtRw",
+					adsc01.sub_district_cd as "ktpSubDistrictCd",
+					adsc01.district_cd as "ktpDistrictCd",
+					adsc01.city_cd as "ktpCityCd",
+					adsc01.postal_cd as "ktpPostalCd",
+
+                    -- emergency contact
+                    applct.contact_name AS "ecName",
+                    applct.address_1 AS "ecAddress1",
+					applct.address_2 AS "ecAddress2",
+					applct.rt_rw as "ecRtRw",
+					applct.sub_district_cd as "ecSubDistrictCd",
+					applct.district_cd as "ecDistrictCd",
+					applct.city_cd as "ecCityCd",
+					applct.postal_cd as "ecPostalCd",
+					applct.handphone_number as "ecHandphoneNumber"
+				from app_master m
+				left join applicant_detail ad on ad.app_number = m.app_number
+				left join app_applicant_rel ar on ar.applicant_id = ad.applicant_id
+				left join applicant_identification ai on ai.applicant_id = ad.applicant_id and ai.id_type='KT'
+				left join applicant_address ads on ads.applicant_id = ad.applicant_id and ads.address_type='02'
+				left join applicant_address adsc on adsc.applicant_id = ad.applicant_id and adsc.address_type='06'
+                left join applicant_address adsc01 on adsc01.applicant_id = ad.applicant_id and adsc01.address_type='01'
+				left join applicant_contact ac on ac.applicant_id = ad.applicant_id and ac.contact_type is null
+                left join applicant_contact applct on applct.applicant_id = ad.applicant_id and applct.contact_type='EC'
+				left join applicant_employment ae on ae.applicant_id = ad.applicant_id
+				left join sales_master s on s.sales_id = m.referal_group_code
+                left join property_detail propdtl on propdtl.app_number=ad.app_number
+                left join project prj on prj.project_code=propdtl.project_cd
+                left join income_detail incdtl on incdtl.applicant_id=ad.applicant_id
+
+				where m.app_number=:appNumber
+				and ar.applicant_type in ('MA','JA')
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- pefindo -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryPefindo" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+					d.APPLIED_FAC_LMT_AMT, d.TENOR_MTH, d.FIXED_RATE, pd.PROPERTY_STATUS_CD, ad.MAILING_ADDRESS_TYPE,
+					ai.ID_NUMBER, ad.FULL_NAME_ID, ad.GENDER_CD, ad.DATE_OF_BIRTH, ad.PLACE_OF_BIRTH, ad.MOTHER_MAIDEN_NAME, ad.MARITAL_STATUS_CD,
+					ae.EMPLOYMENT_TYPE, ae.COMPANY_NAME, ad.DECLARED_BUS_LICENSE_DATE,
+					aad.ADDRESS_1, aad.ADDRESS_2, aad.CITY_CD, aad.POSTAL_CD,
+					ac.WORK_NUMBER, ac.HOME_NUMBER, ac.HANDPHONE_NUMBER,
+					arel.APPLICANT_TYPE, aad.ADDRESS_TYPE,
+					ae.COMPANY_NAME, ad.COMPANY_NPWP_NUMBER
+				FROM APP_MASTER m
+				LEFT JOIN APP_DETAIL d ON d.APP_NUMBER = m.APP_NUMBER
+				LEFT JOIN PROPERTY_DETAIL pd ON pd.APP_NUMBER = m.APP_NUMBER
+				LEFT JOIN APP_APPLICANT_REL arel ON m.APP_NUMBER = arel.APP_NUMBER
+				LEFT JOIN APPLICANT_DETAIL ad ON ad.APPLICANT_ID = arel.APPLICANT_ID
+				LEFT JOIN APPLICANT_ADDRESS aad ON aad.APPLICANT_ID = ad.APPLICANT_ID
+				LEFT JOIN APPLICANT_EMPLOYMENT ae ON ae.APPLICANT_ID = ad.APPLICANT_ID
+				LEFT JOIN APPLICANT_CONTACT ac ON ac.APPLICANT_ID = ad.APPLICANT_ID and ac.contact_type is null
+				LEFT JOIN APPLICANT_IDENTIFICATION ai ON ai.APPLICANT_ID = ad.APPLICANT_ID
+				WHERE
+					m.APP_NUMBER = :appNumber AND arel.APPLICANT_TYPE IN ('MA', 'JA') AND aad.ADDRESS_TYPE in ('01', '06')
+			]]>
+        </query>
+    </operation>
+
+    <!-- credit -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForProcessCredit" type="query">
+        <query>
+            <![CDATA[
+				select
+					ad.gcn_number, ad.is_etb_payroll_flag, ac.applicant_checking_id, ac.applicant_id, ai.id_number
+				from addtl_applicant_checking aac
+				left join applicant_checking ac on ac.addtl_checking_id = aac.addtl_checking_id
+				left join app_applicant_rel arel on arel.applicant_id = aac.applicant_id
+				left join applicant_detail ad on ad.applicant_id = aac.applicant_id
+				left join applicant_identification ai on ai.applicant_id = aac.applicant_id
+				where aac.app_number = :appNumber
+                    and aac.applicant_type in ('MA','JA')
+                    and arel.applicant_type in ('MA','JA')
+                    and ac.checking_type = :checkingType
+					and ad.is_etb_flag = 'Y'
+                    and ad.gcn_number is not null
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- wealth -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForProcessWealth" type="query">
+        <query>
+            <![CDATA[
+				select
+                    arel.applicant_id, arel.applicant_type, ad.full_name_id, ad.gcn_number, ad.is_etb_flag,
+                    m.is_joint_income_flag, id.as_declared_income_amt
+				from app_applicant_rel arel
+				left join applicant_detail ad on arel.applicant_id = ad.applicant_id
+				left join app_master m on m.app_number = ad.app_number
+                left join income_detail id on id.applicant_id = arel.applicant_id and id.income_type='01'
+				where arel.app_number = :appNumber and arel.applicant_type in ('MA','JA')
+			]]>
+        </query>
+    </operation>
+
+
+    <!-- notif -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getDataNotifAIP" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+					m.APP_NUMBER, m.DEVICE_ID, ad.GCN_NUMBER, ad.CIF_NUMBER, ad.IS_ETB_FLAG,
+					case
+                        when bp.product_group_code = 'Conv' then 'N'
+                        else 'Y'
+                    end as is_syariah_flag,
+					bp.NAME PRODUCT_NAME, ad.FULL_NAME_ID, ac.EMAIL_ADDRESS, l.DESCRIPTION REFERAL_TYPE,
+					case
+                        when br.brokercode is null then dr.developer_name
+                        when dr.developer_code is null then br.brokername
+                    else null
+                    end as REFERAL_NAME,
+                    s.full_name as SALES_ID,
+					m.APP_DATE,
+					sprjd.PROPERTY_TYPE_DESC_BAHASA, sprjd.PROPERTY_TYPE_DESC_ENGLISH,
+					cr2.REF_DESC_BAHASA as "PROPERTY_STATUS_CD",
+
+					--coalesce(dr.DEVELOPER_GROUP_NAME, br.BROKERGROUPNAME, dr2.DEVELOPER_GROUP_NAME) as DEVELOPER_NAME,
+					dr2.DEVELOPER_GROUP_NAME as DEVELOPER_NAME,
+
+					prj.PROJECT_NAME, CONCAT(sprjd.SUB_PROJECT_NAME, CONCAT(' - ', pd.SUB_PROJECT_DETAIL_TYPE)) CLUSTER_NAME,
+					prj.CITY_NAME as DATI2_NAME, pd.LAND_SIZE, pd.BUILDING_SIZE,
+					pd.PURCHASE_PRICE,
+                    d.DOWN_PYMT_AMT, d.APPLIED_FAC_LMT_AMT,
+					nvl(d.RECOM_DOWN_PYMT_AMT, pd.PURCHASE_PRICE - d.RECOM_FAC_LMT) as RECOM_DOWN_PYMT_AMT,
+                    d.RECOM_FAC_LMT, d.RECOM_MTHLY_INSTAL,
+                    nvl(d.FINAL_DOWN_PYMT_AMT, pd.PURCHASE_PRICE - d.FINAL_FAC_LMT) as FINAL_DOWN_PYMT_AMT,
+                    d.FINAL_FAC_LMT, d.FINAL_MTHLY_INSTAL,
+					d.FIXED_RATE, d.FIXED_PERIOD, d.TENOR_MTH, d.RECOM_TENOR,
+                    ms.REF_DESC_BAHASA, ms.REF_DESC_EN, cr.REF_DESC_EN STAGE_DESCRIPTION
+
+                FROM APP_MASTER m
+				LEFT JOIN APP_DETAIL d ON d.APP_NUMBER = m.APP_NUMBER
+				LEFT JOIN PROPERTY_DETAIL pd ON pd.APP_NUMBER = m.APP_NUMBER
+				LEFT JOIN APP_APPLICANT_REL arel ON arel.APP_NUMBER = m.APP_NUMBER
+				LEFT JOIN APPLICANT_DETAIL ad ON ad.APPLICANT_ID = arel.APPLICANT_ID
+				LEFT JOIN APPLICANT_CONTACT ac ON ac.APPLICANT_ID = arel.APPLICANT_ID and ac.contact_type is null
+
+				LEFT JOIN EDM_KPR_BASE_PRODUCT bp ON bp.CODE = d.SUB_PRODUCT_CD
+				LEFT JOIN PROJECT prj ON prj.PROJECT_CODE = pd.PROJECT_CD
+				LEFT JOIN SUB_PROJECT_DETAIL sprjd ON sprjd.PROJECT_CODE = pd.PROJECT_CD AND sprjd.SUB_PROJECT_CODE = pd.SUB_PROJECT_CD AND sprjd.PROPERTY_TYPE = pd.SUB_PROJECT_PROPERTY_TYPE
+				LEFT JOIN MTG_MASTER_STAGE ms ON ms.REF_CD = d.STAGE_DETAIL_CD
+				LEFT JOIN COMMON_REF cr ON cr.REF_KEY = 'APP_STAGE' AND cr.REF_CD = d.STAGE_CD
+				LEFT JOIN LOVPARAMS l ON UPPER(l.LOVKEY) = UPPER(m.REFERAL_TYPE) AND l.LOVGROUP = 'REFERRAL'
+				LEFT JOIN COMMON_REF cr2 ON UPPER(cr2.REF_CD) = UPPER(pd.PROPERTY_STATUS_CD) and cr2.REF_KEY = 'Property Status'
+
+				left join SALES_REFFERAL_REL srr on srr.CATEGORY_CD = m.REFERAL_TYPE and m.referal_group_code = srr.SALES_ID
+				left join BROKER br on br.BROKERCODE = srr.REFFERAL_BY_CD
+				left join DEVELOPER dr on dr.DEVELOPER_CODE = srr.REFFERAL_BY_CD
+                left join DEVELOPER dr2 on dr2.DEVELOPER_CODE = pd.DEVELOPER_CD
+				LEFT JOIN SALES_MASTER s ON s.SALES_ID = m.referal_group_code
+
+				WHERE
+					m.APP_NUMBER = :appNumber AND arel.APPLICANT_TYPE='MA'
+			]]>
+        </query>
+    </operation>
+
+
+
+
+
+    <!-- for Engine -->
+    <!-- amlock -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForAmlResult" type="query">
+        <query>
+            <![CDATA[
+				SELECT d.NATIONALITY_CD, d.PLACE_OF_BIRTH, concat(aa.ADDRESS_1, concat(' ', aa.ADDRESS_2)) ADDRESS
+				FROM APPLICANT_DETAIL d
+				LEFT JOIN APPLICANT_ADDRESS aa
+					ON d.APPLICANT_ID = aa.APPLICANT_ID AND aa.ADDRESS_TYPE = '01'
+				WHERE d.APPLICANT_ID = :applicantId
+			]]>
+        </query>
+    </operation>
+
+    <!-- kyc -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForKycResult" type="query">
+        <query>
+            <![CDATA[
+				select
+					ad.applicant_id, ad.full_name_id, arel.applicant_type,
+                    (select applicant_checking_id from applicant_checking where applicant_checking_id = :applicantCheckingId) applicant_checking_id
+				from applicant_detail ad
+				left join applicant_identification ai on ad.applicant_id = ai.applicant_id
+				left join app_applicant_rel arel on arel.applicant_id = ad.applicant_id
+				where ad.app_number = :appNumber and ai.id_number = :idNumber and arel.applicant_type in ('MA','JA')
+			]]>
+        </query>
+    </operation>
+
+    <!-- credit -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForPefindoResult1" type="query">
+        <query>
+            <![CDATA[
+				select ac.applicant_checking_id
+				from addtl_applicant_checking aac
+				left join applicant_checking ac on ac.addtl_checking_id = aac.addtl_checking_id
+                left join app_applicant_rel arel on arel.applicant_id = aac.applicant_id
+				where aac.app_number = :appNumber and aac.applicant_type = :applicantTypeInAac and arel.applicant_type = :applicantTypeInArel and ac.checking_type = :checkingType
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForPefindoResult2" type="query">
+        <query>
+            <![CDATA[
+				select ad.applicant_id, ad.full_name_id, ae.company_name
+				from app_applicant_rel arel
+				left join applicant_detail ad on ad.applicant_id = arel.applicant_id
+				left join applicant_employment ae on ae.applicant_id = arel.applicant_id
+				where ad.app_number = :appNumber and arel.applicant_type = :applicantTypeInArel
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForSelfPipeline" type="query">
+        <query>
+            <![CDATA[
+				select
+					m.app_number, m.product_cd, m.app_date,
+					d.app_detail_id, d.app_detail_status_cd,
+					d.final_tenor, d.tenor_mth, d.recom_tenor,
+					d.recom_fixed_rate, d.final_fixed_rate, d.fixed_rate,
+					d.recom_mthly_instal, d.final_mthly_instal, d.mthly_instal,
+					d.recom_fac_lmt, d.final_fac_lmt, d.applied_fac_lmt_amt,
+					d.recom_underwriting_mthd, d.final_underwriting_mthd, d.underwriting_mthd,
+					pd.property_id, pd.sub_project_property_type, pd.purchase_price,
+                    p.address_line1 || ' ' || p.address_line2 address,
+					pc.cert_number, pc.cert_owner,
+					ains.ins_count
+				from applicant_identification ai
+				left join app_master m on m.app_number = ai.app_number
+				left join app_detail d on d.app_number = m.app_number
+				left join property_detail pd on pd.app_detail_id = d.app_detail_id
+				left join property_cert pc on pc.app_detail_id = d.app_detail_id
+                left join project p on p.project_code = pd.project_cd
+                left join (select app_number, count(*) ins_count from applicant_insurance group by app_number) ains on ains.app_number = m.app_number
+				where ai.id_number = :nik and ai.app_number != :appNumber
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForSelfPipeline2" type="query">
+        <query>
+            <![CDATA[
+				select to_char(ai.id_number) id_number
+				from applicant_identification ai
+				left join app_applicant_rel arel on arel.applicant_id = ai.applicant_id
+				left join applicant_detail ad on ad.applicant_id = ai.applicant_id
+				where ai.app_number = :appNumber and arel.applicant_type = :applicantType and ad.is_etb_flag = 'N'
+			]]>
+        </query>
+    </operation>
+
+    <!-- instinct -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForInstinctResult" type="query">
+        <query>
+            <![CDATA[
+				select
+					ad.applicant_id, ad.full_name_id, arel.applicant_type, ac.applicant_checking_id
+				from applicant_detail ad
+				left join app_applicant_rel arel on arel.applicant_id = ad.applicant_id
+				left join applicant_checking ac on ac.applicant_id = ad.applicant_id and ac.checking_type = :checkingType
+                left join addtl_applicant_checking aac on aac.addtl_checking_id = ac.addtl_checking_id and aac.applicant_type='MA'
+                where ad.app_number = :appNumber and arel.applicant_type = 'MA'
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getApplicantCheckingId" type="query">
+        <query>
+            <![CDATA[
+				select
+					APPLICANT_CHECKING_ID,
+					apppCheck.CHECKING_TYPE,
+					addtl.APPLICANT_TYPE
+				from applicant_checking apppCheck
+				left join ADDTL_APPLICANT_CHECKING addtl on addtl.ADDTL_CHECKING_ID=apppCheck.ADDTL_CHECKING_ID
+				where addtl.app_number=:appNumber
+					and addtl.APPLICANT_TYPE='MA'
+					and addtl.CHECKING_TYPE='FRAUD'
+			]]>
+        </query>
+    </operation>
+
+    <!-- wealth -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="calculateCustSegmentCd" type="query">
+        <query>
+            <![CDATA[
+				select
+					case
+						when :avgAum < 100000000 and :isEtbPayrollFlag = 'Y' then 'PAY'
+						when :avgAum < 100000000 then 'RG'
+						when :avgAum < 500000000 then 'PF'
+						else 'PR'
+					end cust_segment_cd
+				from dual
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="calculateMtgSegmentCd" type="query">
+        <query>
+            <![CDATA[
+				select
+					case when :joint = 'N' then
+						case when :MA_ETB = 'N' then 3
+						else to_number(:MA_seg) end
+					else
+						case when :MA_ETB = 'N' and :JA_ETB = 'N' then 3
+						when :MA_ETB = 'N' and :JA_ETB = 'Y' then least(3, to_number(:JA_seg))
+						when :MA_ETB = 'Y' and :JA_ETB = 'N' then least(to_number(:MA_seg), 3)
+						else least(to_number(:MA_seg), to_number(:JA_seg)) end
+					end result
+				from dual
+			]]>
+        </query>
+    </operation>
+
+
+
+
+
+
+
+
+
+    <!-- for PMOB -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getProdMatrix" type="query">
+        <query>
+            <![CDATA[
+				select MIN_TENOR,MAX_TENOR,FIXED_PERIOD,FIXED_RATE from PARAM_MTG_PROD_MATRIX
+				where SUB_PROD_CD = :collCategoryCode
+				and LP_CD = :lpCode
+				and PROPERTY_CATEGORY_CD = :propertyTypeCode
+                		and (MIN_TENOR <= :tenor and MAX_TENOR >= :tenor) order by FIXED_PERIOD asc
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="GetListDocumentByAppNo" type="query">
+        <query>
+            <![CDATA[
+				select
+                    d."documentOwner",
+                    d."documentID",
+                    d."documentCd",
+                    d."documentNameBahasa",
+                    d."documentNameEn",
+                    d."documentExt",
+                    d."documentLastSequence",
+
+                    docc.doc_category_name_en "documentType",
+
+					docn.doc_note_cd "documentNoteCd",
+                    docn.doc_desc_bahasa "documentNoteDescBahasa",
+                    docn.doc_desc_en "documentNoteDescEn",
+
+                    (d."documentNameEn" || case when d.applicant_type = 'MA' then '_MAIN'
+                    else '_SPOUSE' end) "documentFileName"
+                from (
+                    select
+                        comref.ref_desc_en "documentOwner",
+                        d.mth,
+                        d.year,
+                        d.doc_id "documentID",
+                        d.doc_cd "documentCd",
+                        d.doc_type,
+                        ar.applicant_type,
+
+                        (case when comref2.ref_desc_bahasa is null then docm.doc_name_bahasa
+                        else docm.doc_name_bahasa || ' ' || comref2.ref_desc_bahasa end) "documentNameBahasa",
+                        (case when comref2.ref_desc_en is null then docm.doc_name_en
+                        else docm.doc_name_en || ' ' || comref2.ref_desc_en end) "documentNameEn",
+                        docm.doc_ext "documentExt",
+
+                        (select count(*) from doc_detail where doc_id in (select doc_id from doc where doc_cd=d.doc_cd and app_number = :ApplicationNo)) "documentLastSequence"
+                    from app_applicant_rel ar
+                    left join common_ref comref on comref.ref_cd = ar.applicant_type and comref.ref_key = 'APPLICANT_TYPE'
+                    left join doc d on d.applicant_id = ar.applicant_id
+                    left join common_ref comref2 on comref2.ref_cd = d.mth and comref2.ref_key = 'MONTH'
+                    left join doc_detail dd on dd.doc_id = d.doc_id
+                    left join edm_doc_master docm on docm.doc_cd = d.doc_cd
+                    where ar.app_number = :ApplicationNo and ar.applicant_type in ('MA','JA') and d.doc_status_cd = '1'
+                    group by comref.ref_desc_en, d.doc_id, d.doc_cd, d.doc_type,
+                        docm.doc_name_bahasa, docm.doc_name_en, docm.doc_ext,
+                        ar.applicant_type, comref2.ref_desc_bahasa, comref2.ref_desc_en,   d.mth,
+                        d.year) d
+                left join edm_doc_category docc on docc.doc_category_cd = d.doc_type
+                left join edm_doc_note docn on docn.doc_cd = d."documentCd"
+				ORDER BY CONCAT(d.year, d.mth) asc
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getListApplicationStageHistory" type="query">
+        <query>
+            <![CDATA[
+				select
+					stageHis.app_number,
+					stagehis.stage_cd as "ref_cd",
+					stage.REF_DESC_BAHASA ,
+                    stagehis.created_date  ,
+					stage.REF_DESC_En
+
+				from app_mtg_stage_history stageHis
+					left join mtg_master_stage stage on stagehis.stage_cd =stage.ref_cd
+
+					where stageHis.app_number=:applicationNo
+					ORDER BY stagehis.created_date DESC
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="submitAccept" type="query">
+        <query>
+            <![CDATA[
+				select
+					appdtl.app_detail_id,
+					appdtl.app_ref_number,
+                    propdtl.property_id,
+                    appdtl.tenor_mth,
+		    appdtl.recom_fac_lmt,
+		    m.is_joint_income_flag,
+
+                    apprel.applicant_type,
+					apprel.applicant_id,
+					appl.full_name_id applicant_name
+				from app_master m
+				left join app_applicant_rel apprel on apprel.app_number = m.app_number
+				left join app_detail appdtl on appdtl.app_number = apprel.app_number
+                left join property_detail propdtl on propdtl.app_number = appdtl.app_number
+                left join applicant_detail appl on appl.applicant_id = apprel.applicant_id
+				where m.app_number = :applicationNo and apprel.applicant_type in ('MA', 'JA')
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="submitAccept2" type="query">
+        <query>
+            <![CDATA[
+				select distinct
+insurance.app_number
+from
+Applicant_Contact contact
+left join Property_Cert propcert on propcert.app_number=contact.app_number
+left join Applicant_Insurance insurance on insurance.app_number=propcert.app_number
+where contact.app_number=:applicationNo and contact.contact_type='EC'
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getDistinctListProduct" type="query">
+        <query>
+            <![CDATA[
+				select
+				distinct
+				pm.sub_prod_cd as "productCd", bp.name as "productDesc",
+				pm.property_category_cd as "propertyType", pt.propertytypedescenglish as "propertyTypeDescEn",pt.propertytypedescbahasa as "propertyTypeDescId"
+				from
+				param_mtg_prod_matrix pm
+				left join
+				edm_kpr_base_product bp
+				on bp.code = pm.sub_prod_cd
+				left join
+				edm_property_type_master pt
+				on pt.propertytype = pm.property_category_cd
+				where pm.sub_prod_cd = :productCd
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getMinPlafond" type="query">
+        <query>
+            <![CDATA[
+					select
+					distinct
+					KPR_BASE_PRODUCT_CODE as "productCd", PROPERTY_TYPE_CODE as "propertyTypeCd",
+					MINIMUM_PLAFOND as "minPlafond"
+					from EDM_PRODUCT_PLAFOND
+					where KPR_BASE_PRODUCT_CODE = :productCd
+					and PROPERTY_TYPE_CODE = :propertyTypeCd
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="GetListRangeTenor" type="query">
+        <query>
+            <![CDATA[
+				select min(MIN_TENOR) as MIN_TENOR, max(MAX_TENOR) as MAX_TENOR from PARAM_MTG_PROD_MATRIX
+				where SUB_PROD_CD = :collCategoryCode
+				and LP_CD = :lpCode
+				and PROPERTY_CATEGORY_CD = :propertyTypeCode
+			]]>
+        </query>
+    </operation>
+
+
+
+
+
+
+
+    <!-- for Workflow -->
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryListProjectAndBranchMortgage" type="query">
+        <query>
+            <![CDATA[
+				select
+					a.BRANCH_CD,a.PROJECT_CD,a.BRANCH_TYPE,
+					(select SEQUENTIAL from BRANCH_PARAM_SEQ where BRANCH_CD = a.BRANCH_CD) as SEQUENTIAL
+				from MTG_BRANCH a
+				where PROJECT_CD = :projectCd
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForSaveAml" type="query">
+        <query>
+            <![CDATA[
+				select ad.aml_history_id, ad.list_name, ad.is_suspect_match_flag
+				from aml_detail ad where ad.aml_history_id =
+					(select ah.aml_history_id
+					from applicant_aml_history ah
+					where ah.applicant_checking_id = :applicantCheckingId
+					order by ah.created_date desc
+					fetch next 1 rows only)
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryHumanTask" type="query">
+        <query>
+            <![CDATA[
+				select
+				x.PRODUCT_CD, a.FULL_NAME, a.IS_SYARIAH_FLAG, b.HANDPHONE_NUMBER, c.ID_NUMBER, c.ID_TYPE,X.SALES_ID,
+				x.APP_DATE, (select REF_DESC_EN from COMMON_REF where REF_KEY = 'APP_STAGE' and REF_CD = x.STAGE_CD) DESCRIPTION,
+				(select REF_DESC_EN from COMMON_REF where REF_KEY = 'APP_STATUS' and REF_CD = ad.APP_DETAIL_STATUS_CD) STATUS,
+                ad.PROCESSING_BRANCH_CD BRANCH
+				from APP_MASTER x
+				left join APP_DETAIL ad on ad.APP_NUMBER = x.APP_NUMBER
+				left join APPLICANT_DETAIL a on a.APP_NUMBER = x.APP_NUMBER
+				left join APPLICANT_CONTACT b on b.APP_NUMBER = x.APP_NUMBER and b.APPLICANT_ID = a.APPLICANT_ID and b.contact_type is null
+				left join APPLICANT_IDENTIFICATION c on c.APP_NUMBER = x.APP_NUMBER and c.APPLICANT_ID = a.APPLICANT_ID
+				left join APP_APPLICANT_REL d on  d.APP_NUMBER = x.APP_NUMBER and d.APPLICANT_ID = a.APPLICANT_ID
+				where d.APPLICANT_TYPE = 'MA' and c.ID_TYPE = 'KT' and x.APP_NUMBER = :appNumber
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getEstBuildingValue" type="query">
+        <query>
+            <![CDATA[
+				select
+					case
+						when :propertyType='001' and :buildingSize<=99.99
+						then :buildingSize*3693000
+
+						when :propertyType='001' and :buildingSize<=499.99
+						then :buildingSize*5474000
+
+						when :propertyType='001' and :buildingSize<=999.99
+						then :buildingSize*8407000
+
+						when :propertyType='001' and :buildingSize<=10000
+						then :buildingSize*10000000
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=2
+						then :buildingSize*3885000
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=3
+						then :buildingSize*4872000
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=4
+						then :buildingSize*5134000
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=9999
+						then :buildingSize*5273000
+
+						when :propertyType='006'
+						then to_number(:purchasePrice)
+
+						when :propertyType='024'
+						then 0
+
+						end as est_building_value,
+
+
+					case
+						when :propertyType='001' and :buildingSize<=99.99
+						then :purchasePrice-(:buildingSize*3693000)
+
+						when :propertyType='001' and :buildingSize<=499.99
+						then  :purchasePrice-(:buildingSize*5474000)
+
+						when :propertyType='001' and :buildingSize<=999.99
+						then :purchasePrice-(:buildingSize*8407000)
+
+						when :propertyType='001' and :buildingSize<=10000
+						then  :purchasePrice-(:buildingSize*10000000)
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=2
+						then  :purchasePrice-(:buildingSize*3885000)
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=3
+						then  :purchasePrice-(:buildingSize*4872000)
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=4
+						then  :purchasePrice-(:buildingSize*5134000)
+
+						when :propertyType in('002','003') and (:buildingSize/:landSize)<=9999
+						then  :purchasePrice-(:buildingSize*5273000)
+
+						when :propertyType='006'
+						then 0
+
+						when :propertyType='024'
+						then to_number(:purchasePrice)
+
+						end as est_land_value
+
+				from dual
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryTatByProcCd" type="query">
+        <query>
+            <![CDATA[
+				select ref_cd tat
+				from common_ref
+				where ref_key = 'MTG_SLA'
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="calculateFee" type="query">
+        <query>
+            <![CDATA[
+				select * from
+(select
+    fm.fee_type, fm.fee_type_desc_english,
+    fm.fee_sub_type, fm.fee_sub_type_desc_english,
+    fm.fee_amount, fm.fee_percentage, fm.minimum_threshold_fee_amount, fm.minimum_amount, fm.maximum_amount,
+
+    case when fm.fee_amount is not null then
+
+        case when (nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt)>=fm.minimum_amount and nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt)<=fm.maximum_amount) or (fm.minimum_amount is null and fm.maximum_amount is null) then fm.fee_amount
+            when fm.fee_sub_type = 'PE00000018' and ((nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * 1.25)>=fm.minimum_amount and (nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * 1.25)<=fm.maximum_amount) then fm.fee_amount
+        end
+
+    when fm.fee_percentage is not null then
+
+        case when fm.minimum_threshold_fee_amount is null then
+            case when fm.fee_sub_type = 'AK00000002' then nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * 1.25 * fm.fee_percentage
+            else nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * fm.fee_percentage end
+
+        when (nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt)>=fm.minimum_amount and nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt)<=fm.maximum_amount) or (fm.minimum_amount is null and fm.maximum_amount is null) then
+            case when fm.fee_sub_type = 'AK00000002' then
+                case when nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * 1.25 * fm.fee_percentage < fm.minimum_threshold_fee_amount then fm.minimum_threshold_fee_amount
+                else nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * 1.25 * fm.fee_percentage end
+            else
+                case when nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * fm.fee_percentage < fm.minimum_threshold_fee_amount then fm.minimum_threshold_fee_amount
+                else nvl(appdet.recom_fac_lmt,appdet.applied_fac_lmt_amt) * fm.fee_percentage end
+            end
+        end
+    else null
+    end fee
+from app_detail appdet
+left join property_detail propdet on propdet.app_number = appdet.app_number
+left join edm_kpr_base_product baseprod on baseprod.code = appdet.sub_product_cd
+
+left join edm_fee_master fm on
+    (substr(baseprod.product_group_code,1,1) = fm.shariah_conventional_code or fm.shariah_conventional_code is null)
+    and (propdet.property_category_cd = fm.property_category_code or fm.property_category_code is null)
+
+where appdet.app_number = :appNumber
+and (fm.certificate_type = :certType or fm.certificate_type is null or :certType is null)
+order by fm.fee_type, fm.fee_sub_type, fee_amount
+)
+where fee is not null
+and (fee_type = :feeType or :feeType is null)
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="getSubsidyFeeForMpc" type="query">
+        <query>
+            <![CDATA[
+				select
+progdet.program_code,
+proreg.subsidy_category_code,
+progdet.subsidy_method_code,
+progdet.subsidy_rate,
+progdet.subsidy_amount,
+proreg.final_interest_rate,
+proreg.start_tenor,
+proreg.end_tenor,
+proreg.fee_sub_type,
+proreg.priority_key,
+proreg.shariah_conventional_code
+from app_detail appdet
+left join edm_kpr_base_product baseprod on baseprod.code = appdet.sub_product_cd
+left join mtg_program_detail progdet on progdet.program_code = appdet.pkg_cd
+left join mtg_program_regd proreg on proreg.program_code = progdet.program_code
+    and proreg.shariah_conventional_code = (substr(baseprod.product_group_code,1,1))
+where appdet.app_number = :appNumber
+and (progdet.subsidy_category_code = '02' or progdet.subsidy_category_code = '03')
+and proreg.subsidy_category_code != '01'
+order by progdet.subsidy_method_code, proreg.priority_key asc
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryDocBankStatement" type="query">
+        <query>
+            <![CDATA[
+				select
+					ad.tenor_mth tenor, ad.recom_fac_lmt plafond, d.doc_cd,
+                    d.year || '-' || substr(0||d.mth, -2) year_month,
+                    dd.file_name, aar.applicant_type as owner
+				from doc d
+				left join doc_detail dd on dd.doc_id = d.doc_id
+				left join app_applicant_rel aar on aar.applicant_id = d.applicant_id and aar.applicant_type in ('MA', 'JA')
+				left join app_detail ad on ad.app_number = d.app_number
+				where d.doc_cd = 'ES000003' and d.doc_status_cd = '2' and d.app_number = :appNumber
+				order by aar.applicant_type desc, d.year, d.mth
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForProcessPervios" type="query">
+        <query>
+            <![CDATA[
+				select
+                    ac.applicant_checking_id, ac.applicant_id, ad.app_detail_id, ad.app_ref_number
+				from applicant_checking ac
+				left join addtl_applicant_checking aac on ac.addtl_checking_id = aac.addtl_checking_id
+                left join app_detail ad on ad.app_number = ac.app_number
+				where ac.app_number = :appNumber and ac.checking_type = 'WEALTH' and aac.applicant_type = :applicantType
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryBv" type="query">
+        <query>
+            <![CDATA[
+				select
+					0 as seq,
+					'A' as applicant_type,
+					'BV' || arel.app_number || '_0' order_id,
+					arel.app_number,
+					'Applicant' applicant_type_desc,
+					ae.company_name,
+					aa.address_1 || ' ' || aa.address_2 address,
+					aa.sub_district_cd kelurahan,
+					aa.district_cd kecamatan,
+					aa.city_cd,
+					aa.postal_cd,
+					ae.position_cd,
+					'R&' || 'K' request_type
+				from app_applicant_rel arel
+				left join applicant_employment ae on ae.applicant_id = arel.applicant_id
+				left join applicant_address aa on aa.applicant_id = arel.applicant_id
+				where arel.app_number = :appNumber and arel.applicant_type = 'MA' and aa.address_type = '06'
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryRv" type="query">
+        <query>
+            <![CDATA[
+				select
+					0 as seq,
+					'A' as applicant_type,
+					'RV' || arel.app_number || '_0' order_id,
+					arel.app_number,
+					'Applicant' applicant_type_desc,
+					ad.full_name_id,
+					case when ad.gender_cd = 'M' then 'L'
+						else 'P' end gender,
+					ad.date_of_birth,
+					aa.address_1,
+					aa.address_2,
+					aa.sub_district_cd kelurahan,
+					aa.district_cd kecamatan,
+					regexp_substr(aa.rt_rw, '[^/]+', 1, 1) rt,
+					regexp_substr(aa.rt_rw, '[^/]+', 1, 2) rw,
+					aa.city_cd,
+					aa.postal_cd,
+					'R&' || 'K' request_type
+				from app_applicant_rel arel
+				left join applicant_employment ae on ae.applicant_id = arel.applicant_id
+				left join applicant_address aa on aa.applicant_id = arel.applicant_id
+				left join applicant_detail ad on ad.applicant_id = arel.applicant_id
+				where arel.app_number = :appNumber and arel.applicant_type = 'MA' and aa.address_type = '01'
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqDocumentReceive" type="query">
+        <query>
+            <![CDATA[
+				SELECT
+
+    CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM doc
+            WHERE app_number = :applicationNo
+            AND doc_status_cd != '2'  AND doc_status_cd != '3'
+        ) THEN 'N'
+        ELSE 'Y'
+    END AS "flag"
+FROM
+dual
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqEmploymentType" type="query">
+        <query>
+            <![CDATA[
+
+
+select
+(select
+
+case when emp.employment_type='F' then '1'
+     when emp.employment_type='H' then '2'
+     else '3'
+     end as empTypeMA
+
+from applicant_detail appdet
+left join app_applicant_rel apprel on apprel.applicant_id=appdet.applicant_id
+left join APPLICANT_EMPLOYMENT emp on emp.applicant_id=appdet.applicant_id
+where appdet.app_number=:applicationNo and apprel.applicant_type='MA') as "empTypeMA",
+
+(select
+
+case when emp.employment_type='F' then '1'
+     when emp.employment_type='H' then '2'
+     else '3'
+     end as empTypeJA
+
+from applicant_detail appdet
+left join app_applicant_rel apprel on apprel.applicant_id=appdet.applicant_id
+left join APPLICANT_EMPLOYMENT emp on emp.applicant_id=appdet.applicant_id
+where appdet.app_number=:applicationNo and apprel.applicant_type='JA') as "empTypeJA",
+(
+select
+project.postal_code
+from property_detail
+left join project on project.project_code=property_detail.project_cd
+where property_detail.app_number=:applicationNo
+)"postalCd",
+(select UNDERWRITING_MTHD_DESC from APP_DETAIL_POLICY where APP_NUMBER = :applicationNo order by CREATED_DATE desc fetch next 1 rows only) as "landingMthd"
+
+
+from dual
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="EstimateBuildingCalc" type="query">
+        <query>
+            <![CDATA[
+
+
+
+select
+(:buildingSize*building_value) "estimateBuildingValue",
+    (:purchasePrice-(:buildingSize*building_value))"estimateLandValue"
+from insurance_formula
+where property_type=:propertyType and ((((:buildingSize/:landSize)<max_building_size)
+						and ((:buildingSize/:landSize)>min_building_size)and property_type in('002','003') )
+						or ((:buildingSize BETWEEN min_building_size and max_building_size)and property_type='001'))
+
+
+
+
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqDataRouting" type="query">
+        <query>
+            <![CDATA[
+
+
+SELECT "value", "before", "after"
+FROM (
+    SELECT
+        TYPE AS "value",
+        VERIFIED_OLD_VALUE AS "before",
+        VERIFIED_NEW_VALUE AS "after",
+        ROW_NUMBER() OVER (PARTITION BY TYPE ORDER BY CREATED_DATE DESC) AS rn
+    FROM
+        APP_VER_DETAIL
+    WHERE
+        app_number = :applicationNo
+        AND TYPE IN ('hargaJual', 'dp', 'plafon', 'luasBangunan', 'luasTanah', 'bungaDeviasi',
+                     'alamatAgunan', 'alamatKTPApplicant', 'gantiNamaSertifikat', 'tenor',
+                     'alamatKTPSpouse', 'alamatTempatTinggalSpouse', 'alamatKerjaSpouse')
+)
+WHERE rn = 1
+
+
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="GetListClusterBySalesId" type="query">
+        <query>
+            <![CDATA[
+
+select
+to_char(area.PROJECT_CD)"clusterCd",
+to_char(area.project_name)"clusterName"
+from sales_refferal_rel rel
+left join sales_referral sales on sales.developer_cd=rel.refferal_by_cd
+left join sales_referral area on area.PROJECT_AREA_CD=sales.PROJECT_AREA_CD
+where rel.sales_id=:salesId
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="GetFeeList" type="query">
+        <query>
+            <![CDATA[
+
+
+     SELECT DISTINCT
+    (select sum(fee_amt)from APP_DETAIL_FEE_OTHS where app_number=:applicationNo)"totalBiaya",
+    fee.sub_category_cd"feeSubType",
+    feeMaster.fee_sub_type_desc_bahasa"feeSubTypeDescBahasa",
+    feeMaster.fee_sub_type_desc_english"feeSubTypeDescEn",
+    fee.fee_amt"feeAmount"
+
+    FROM APP_DETAIL_FEE_OTHS fee
+    left join common_ref comref on comref.ref_cd=fee.sub_category_cd and comref.ref_key='Fee Type'
+    left join edm_fee_master feeMaster on feeMaster.fee_sub_type=fee.sub_category_cd
+    where app_number=:applicationNo
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqDataOpeningCasa" type="query">
+        <query>
+            <![CDATA[
+
+  select distinct
+
+APPLICANT_DETAIL.APP_NUMBER"reffCode",
+APPLICANT_DETAIL.FULL_NAME_ID"firstName",
+APPLICANT_CONTACT.EMAIL_ADDRESS"emailAddr",
+APPLICANT_CONTACT.HANDPHONE_NUMBER"handPhoneNum",
+to_char(APPLICANT_DETAIL.DATE_OF_BIRTH)"birthDt",
+APPLICANT_DETAIL.PLACE_OF_BIRTH"placeOfBirth",
+APPLICANT_DETAIL.MOTHER_MAIDEN_NAME"motherMaidenName",
+APPLICANT_DETAIL.GENDER_CD"gender",
+APPLICANT_DETAIL.RELIGION_CD"religion",
+APPLICANT_DETAIL.NATIONALITY_CD"nationality",
+APP_DETAIL_DISBURSE.RESIDENT_STATUS"residentStatus",
+APPLICANT_DETAIL.MARITAL_STATUS_CD"maritalStatus",
+APPLICANT_DETAIL.NUMBER_DEPENDENT"numOfDependants",
+APPLICANT_DETAIL.LAST_EDUCATION_LVL"lastEducationLevel",
+APP_DETAIL_DISBURSE.ALIAS_NAME"aliasName",
+APP_MASTER.OPEN_BRANCH_CD"branchCode",
+APP_MASTER.IS_ETB_FLAG"flagExisting",
+APP_MASTER.IS_ETB_CASA"flagETBCASA",
+APP_MASTER.IS_ETB_CC"flagETBCC",
+APPLICANT_DETAIL.IS_ETB_PAYROLL_FLAG"flagETBPayroll",
+APPLICANT_DETAIL.CIF_SOURCE"source",
+APP_MASTER.IS_ETBJF_FLAG"etbjf",
+APP_MASTER.IS_ETBRDN_FLAG"etbrdn",
+APP_MASTER.IS_ETBRDL_FLAG"etbrdl",
+APP_MASTER.IS_CLOSED_ACCT_FLAG"closedAccount",
+APP_DETAIL_DISBURSE.TERMS_ACCEPTED"termsAccepted",
+APP_DETAIL_DISBURSE.TERMS_AWAL_ACCEPTED"termsAwalAccepted",
+APP_APPLICANT_REL.APPLICANT_TYPE"applicantType",
+APPLICANT_IDENTIFICATION.ID_NUMBER"taxNo",
+APP_DETAIL_DISBURSE.IS_AS_CASA_FLAG"flagASCASA",
+APP_DETAIL_DISBURSE.IS_REGD_PNET_FLAG"isRegPermataNet",
+APP_DETAIL_DISBURSE.EFORM_LANG"eFormLang",
+APP_DETAIL_DISBURSE.DEPOSIT_TRX_ACCT"depositTrxAccount",
+APP_DETAIL_DISBURSE.DEPOSIT_TRX_AMT"depositTrxAmount",
+APP_DETAIL_DISBURSE.WITHDRAWAL_TRX_ACCT"withdrawalTrxAccount",
+APP_DETAIL_DISBURSE.WITHDRAWAL_TRX_AMT"withdrawalTrxAmount",
+APP_DETAIL_DISBURSE.PEMOHON_TYPE"pemohonType",
+APP_DETAIL_DISBURSE.CORR_ADD"correspondenceAdd",
+APPLICANT_DETAIL.MAILING_ADDRESS_TYPE"deliveryAddress",
+APP_DETAIL_DISBURSE.IS_E_STMT_FLAG"eStatementFlag",
+APP_DETAIL_DISBURSE.CHANNEL_CD"channel",
+APPLICANT_EMPLOYMENT.COMPANY_TYPE"companyType",
+
+
+APPLICANT_EMPLOYMENT.EMPLOYMENT_TYPE"employmentType",
+APPLICANT_EMPLOYMENT.EMPLOYMENT_STATUS_CD"employmentStatus",
+APPLICANT_EMPLOYMENT.POSITION_CD"position",
+APPLICANT_EMPLOYMENT.POSITION_CD"positionCode",
+APP_DETAIL_DISBURSE.DEPARTMENT"department",
+APPLICANT_EMPLOYMENT.ECONOMIC_SECTOR_CD"economicSector",
+APPLICANT_EMPLOYMENT.LENGTH_OF_WORK_YEAR"employeeSinceYear",
+APPLICANT_EMPLOYMENT.LENGTH_OF_WORK_MTH"employeeSinceMonth",
+APP_DETAIL_DISBURSE.TOTAL_EMP"totalEmployees",
+APPLICANT_EMPLOYMENT.COMPANY_TYPE"corporateType",
+APPLICANT_EMPLOYMENT.COMPANY_NAME"corporateName",
+APP_DETAIL_DISBURSE.MTHLY_INCOME_CD"monthlyIncomeCode",
+INCOME_DETAIL.AS_VERIFIED_INCOME_AMT"monthlyIncome",
+APP_DETAIL_DISBURSE.SOURCE_OF_FUND"sourceOfFund",
+APP_DETAIL_DISBURSE.SALARY_SLIP_TYPE"salarySlipType",
+
+
+APPLICANT_IDENTIFICATION.ID_TYPE"idType",
+APP_DETAIL_DISBURSE.EXP_DATE"idExpiryDate",
+APPLICANT_DETAIL.FULL_NAME_ID"idName",
+APPLICANT_IDENTIFICATION.ID_NUMBER"idNumber",
+
+
+
+CASA_PRODUCT.STA_PRODUCT_CD"staProductCode",
+CASA_PRODUCT.NO_URUT"noUrut",
+APP_DETAIL_DISBURSE.USER_ID"userID",
+APP_DETAIL_DISBURSE.CELL_PHONE_TYPE"cellPhoneType",
+
+
+
+APPLICANT_DETAIL.APP_NUMBER"reffCode",
+APP_DETAIL_DISBURSE.IS_REQUEST_DIGITAL_CARD_FLAG"requestDigitalCard",
+APP_DETAIL_DISBURSE.IS_REQUEST_PHY_CARD_FLAG"requestPhysicalCard",
+APP_DETAIL_DISBURSE.IS_AUTO_ACTIVE_DIGITAL_CARD_FLAG"autoActiveDigitalCard",
+APPLICANT_DETAIL.FULL_NAME_ID"nameOnCard",
+
+
+APPLICANT_DETAIL.APP_NUMBER"reffCode",
+APP_DETAIL_DISBURSE.KYC_TYPE"kycType",
+APP_DETAIL_DISBURSE.KYC_STATUS"kycStatus",
+APPLICANT_CONTACT.HANDPHONE_NUMBER"additionalData",
+APPLICANT_DETAIL.LIVENESS_ID"livenessID",
+
+
+
+APP_DETAIL_DISBURSE.TRF_AMT"transferAmount",
+APP_DETAIL_DISBURSE.SETORAN_AWAL"setoranAwal",
+APP_DETAIL_DISBURSE.TRF_DATE"transferDate",
+APP_DETAIL_DISBURSE.PERIOD"period",
+APP_DETAIL_DISBURSE.SOURCE_ACCT"sourceAccount",
+APP_DETAIL_DISBURSE.EXP_DATE"expiredDate",
+APP_DETAIL_DISBURSE.GIFT"gift",
+APP_DETAIL_DISBURSE.WARIS_NAME"warisName",
+APP_DETAIL_DISBURSE.ADDRESS_1"addressLine1",
+APP_DETAIL_DISBURSE.ADDRESS_2"addressLine2",
+APP_DETAIL_DISBURSE.WARIS_CITY_OF_BIRTH_CD"warisCityOfBirth",
+APP_DETAIL_DISBURSE.WARIS_DATE_OF_BIRTH"warisDateOfBirth",
+APP_DETAIL_DISBURSE.WARIS_REL_CD"warisRelations",
+
+
+
+lovparams.description_EN"position",
+app_detail.SUB_PRODUCT_CD"productCd",
+app_master.IS_ETB_FLAG"etbFlag",
+edm.product_group_code"productGroupCd",
+
+
+
+
+CASA_PRODUCT.IS_BUNDLING_FLAG"bundlingFlag",
+CASA_PRODUCT.STA_PRODUCT_CD"staProductCode",
+CASA_PRODUCT.NO_URUT"noUrut",
+CASA_PRODUCT.PRODUCT_FAMILY"productFamily",
+CASA_PRODUCT.PRODUCT_TYPE"productType",
+CASA_PRODUCT.MAILING_ADDRESS_TYPE"kodeAlamatRekeningKoran",
+CASA_PRODUCT.SDDEDD"sddedd",
+CASA_PRODUCT.IS_REGD_NAVIG_FLAG"isRegNavigator",
+APPLICANT_CONTACT.HANDPHONE_NUMBER"phoneNumber",
+CASA_PRODUCT.STMT_MTHD"statementMethod",
+APPLICANT_CONTACT.EMAIL_ADDRESS"emailAddr",
+APP_MASTER.OPEN_BRANCH_CD"branchCode",
+CASA_PRODUCT.OFFICER_CD"officerCode",
+CASA_PRODUCT.EVENT_CD"eventCode",
+CASA_PRODUCT.SOURCE"source",
+CASA_PRODUCT.PURP"purpose",
+CASA_PRODUCT.OPENING"opening",
+APPLICANT_DETAIL.FULL_NAME_ID"accountTitle",
+CASA_PRODUCT.CCY"accountCurrency",
+CASA_PRODUCT.CCY_OTHS"accCurrencyOther",
+CASA_PRODUCT.HOLD_MAIL"holdMail",
+CASA_PRODUCT.ACCT_TYPE"accountType",
+
+
+CC_PRODUCT.PRODUCT_TYPE"productType",
+APPLICANT_DETAIL.FULL_NAME_ID"nameOnCard",
+CC_PRODUCT.CARD_CORP"cardCorporate",
+CC_PRODUCT.CTD"cycleDate",
+CC_PRODUCT.IS_AUTO_DEBET_FLAG"autoDebet",
+CC_PRODUCT.IS_FULL_DEBET_FLAG"fullDebet",
+CC_PRODUCT.INFO_1"info1",
+CC_PRODUCT.INFO_2"info2",
+CC_PRODUCT.CRED_SHIELD"creditShield",
+CC_PRODUCT.INSURANCE_CD"insuranceCode",
+APPLICANT_DETAIL.GCN_NUMBER"gcn",
+APPLICANT_DETAIL.CIF_NUMBER"cif",
+app_detail.sub_product_Cd "subProductCode"
+
+
+
+from APP_MASTER
+left join  APP_DETAIL_DISBURSE on APP_DETAIL_DISBURSE.app_number=APP_MASTER.app_number
+left join app_detail on app_detail.app_number=APP_MASTER.app_number
+left join EDM_KPR_BASE_PRODUCT edm on edm.code=app_detail.SUB_PRODUCT_CD
+left join APP_APPLICANT_REL on APP_APPLICANT_REL.app_number=APP_MASTER.app_number
+left join APPLICANT_CONTACT on APPLICANT_CONTACT.applicant_id=APP_APPLICANT_REL.applicant_id
+left join APPLICANT_DETAIL on APPLICANT_DETAIL.applicant_id=APP_APPLICANT_REL.applicant_id
+left join APPLICANT_EMPLOYMENT on APPLICANT_EMPLOYMENT.applicant_id=APPLICANT_DETAIL.applicant_id
+left join APPLICANT_IDENTIFICATION on APPLICANT_IDENTIFICATION.applicant_id=APPLICANT_DETAIL.applicant_id and applicant_identification.id_type='KT'
+left join INCOME_DETAIL on INCOME_DETAIL.applicant_id=APPLICANT_IDENTIFICATION.applicant_id
+left join lovparams on lovparams.lovkey=APPLICANT_EMPLOYMENT.POSITION_CD and lovparams.lovgroup='JABATAN'
+LEFT JOIN CC_PRODUCT ON cc_product.app_number=APP_MASTER.APP_NUMBER
+LEFT JOIN CASA_PRODUCT ON CASA_PRODUCT.app_number=APP_MASTER.APP_NUMBER
+where app_master.app_number=:applicationNo and APP_APPLICANT_REL.applicant_type='MA' and applicant_contact.contact_type is null
+
+
+
+			]]>
+        </query>
+    </operation>
+
+
+
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqDataOpeningCasaAddress" type="query">
+        <query>
+            <![CDATA[
+
+
+
+select
+APPLICANT_ADDRESS.ADDRESS_TYPE"addressType",
+APPLICANT_ADDRESS.ADDRESS_1"addressLine1",
+APPLICANT_ADDRESS.ADDRESS_2"addressLine2",
+REGEXP_SUBSTR(APPLICANT_ADDRESS.RT_RW, '[^/]+', 1, 1)"rt",
+REGEXP_SUBSTR(APPLICANT_ADDRESS.RT_RW, '[^/]+', 1, 2)"rw",
+APPLICANT_ADDRESS.SUB_DISTRICT_CD"kelurahan",
+APPLICANT_ADDRESS.DISTRICT_CD"kecamatan",
+APPLICANT_ADDRESS.CITY_CD"kota",
+APPLICANT_ADDRESS.DATI_2"dati2",
+APPLICANT_ADDRESS.POSTAL_CD"postCode",
+APPLICANT_ADDRESS.COUNTRY_CD"country",
+APP_DETAIL_DISBURSE.OWN_STATUS"ownershipStatus",
+APP_DETAIL_DISBURSE.LENGTH_OF_STAY_YEAR"yearsLengthOfStay",
+APP_DETAIL_DISBURSE.LENGTH_OF_STAY_MTH"monthsLengthOfStay"
+from APPLICANT_ADDRESS
+left join  APP_DETAIL_DISBURSE on APP_DETAIL_DISBURSE.app_number=APPLICANT_ADDRESS.app_number
+
+where APPLICANT_ADDRESS.app_number=:applicationNo
+
+
+
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqDataOpeningCasaPhone" type="query">
+        <query>
+            <![CDATA[
+
+
+
+
+select
+APPLICANT_CONTACT.CONTACT_TYPE"phoneType",
+APPLICANT_CONTACT.PHONE_AREA_HOME"phoneArea",
+APPLICANT_CONTACT.HANDPHONE_NUMBER"phoneNumber",
+APPLICANT_CONTACT.EXT_WORK"ext"
+
+from APPLICANT_CONTACT
+where APPLICANT_CONTACT.app_number=:applicationNo
+
+
+
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="InqDataOpeningCasa5" type="query">
+        <query>
+            <![CDATA[
+
+
+select
+DOC.DOC_TYPE"type",
+DOC.DOC_NAME"documentName"
+
+
+from DOC
+where DOC.app_number=:applicationNo and doc.doc_cd='KT000001'
+
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="GetListBundlingProductInfo" type="query">
+        <query>
+            <![CDATA[
+
+SELECT
+mpb.SUB_PRODUCT_CD"subProductCode",
+mpb.SUB_PRODUCT_NAME"subProductName",
+mpb.SUB_PRODUCT_CASA_CD"subProductCASACode",
+mpb.SUB_PRODUCT_CASA_NAME"subProductCASAName",
+mpb.SUB_PRODUCT_COMBINE_NAME"subProductCombineName",
+mpb.SUB_PRODUCT_COMBINE_CD"subProductCombineCode",
+mpb.PRODUCT_GROUP_CD "subProductGroupCode",
+mpb.IS_OPEN_NEW_CASA "isOpenNewCasa"
+
+FROM MTG_PROD_BUNDLING mpb
+WHERE (MPB.SUB_PRODUCT_CD =:subProductCode or :subProductCode is null)
+
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="CekDataCASA" type="query">
+        <query>
+            <![CDATA[
+select
+APP_DETAIL_DISBURSE_ID
+from APP_DETAIL_DISBURSE
+WHERE APP_NUMBER=:appNumber
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="UpdateAccNumber1" type="query">
+        <query>
+            <![CDATA[
+
+
+UPDATE APP_DETAIL_DISBURSE
+SET ACCT_NUMBER = :accNumber, MODIFIED_DATE=:date
+WHERE APP_NUMBER=:appNumber
+
+			]]>
+        </query>
+    </operation>
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="UpdateAccNumber2" type="query">
+        <query>
+            <![CDATA[
+
+select 1 from dual
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="loggingOpeningCasaResponse" type="query">
+        <query>
+            <![CDATA[
+
+insert into OAPI_OPENING_CASA_RESP
+(
+OAPI_OPENING_CASA_RESP_ID,
+APPLICATION_NO,
+RESPONSE_DATE,
+RESPONSE_BODY,
+CREATED_BY
+)
+
+values
+(
+:id,
+:appNumber,
+:date,
+:reqBody,
+'SYSTEM'
+)
+
+
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="GetLOOFileName" type="query">
+        <query>
+            <![CDATA[
+				select
+					dd.file_name
+				from doc d
+				left join doc_detail dd on dd.doc_id = d.doc_id
+				where d.app_number = :appNumber and d.doc_cd = 'LE000006'
+				order by dd.created_date desc
+				fetch next 1 rows only
+			]]>
+        </query>
+    </operation>
+
+
+    <operation datasource="mortgageDigitalDS" docId="be-mortgage/mortgage" id="inquiryForSubmitInternalVerification" type="query">
+        <query>
+            <![CDATA[
+				select
+					ad.app_detail_id, ad.app_ref_number, arel.applicant_id
+				from app_detail ad
+				left join app_applicant_rel arel on arel.app_number = ad.app_number
+				where ad.app_number = :appNumber and arel.applicant_type in ('MA', 'JA')
+			]]>
+        </query>
+    </operation>
+
+
+
+</root>

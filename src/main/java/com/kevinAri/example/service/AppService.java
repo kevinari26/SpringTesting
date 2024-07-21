@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.node.TextNode;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.ibm.icu.text.RuleBasedNumberFormat;
 import com.ibm.icu.util.ULocale;
 import com.kevinAri.example.model.ActionEnum;
@@ -16,22 +16,16 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import oracle.sql.TIMESTAMP;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 import com.ibm.icu.text.NumberFormat;
-import sun.applet.Main;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -46,13 +40,14 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 
 @Service
 public class AppService {
     @Autowired
     ObjectMapper objectMapper;
+    @Autowired
+    XmlMapper xmlMapper;
     @Autowired
     JasperService jasperService;
     @Autowired
@@ -108,20 +103,18 @@ public class AppService {
 
     public void execute() {
         try {
-//            Date date = new Date();
+            Date date = new Date();
 //            System.out.println(date.toString());
-//            System.out.println(date.getTime());
+            System.out.println(date.getTime());
 //            System.out.println(UUID.randomUUID());
+            for (int i = 0; i < 84; i++) {
+                System.out.println(UUID.randomUUID());
+            }
 
-            FutureTask<String> ft = new FutureTask<>(() -> "foo");
-//            ft.run();
-
-            ExecutorService executorService = Executors.newFixedThreadPool(2);
-            executorService.submit(ft);
-
-            Future<Integer> future = testFuture(executorService);
-//            future.();
-//            ft.
+//            base64ToFile();
+//            fileToBase64();
+//            testJsonNodeReadFileXml();
+//            testJsonNodeReadFile();
 
         } catch (Exception e) {
             try {
@@ -640,10 +633,22 @@ public class AppService {
     }
     private void testJsonNodeReadFile() {
         try {
-            //            File jsonFile = new File("D:\\Project\\Java\\SpringTesting\\src\\main\\resources\\jsonFiles\\data.json");
+//            File jsonFile = new File("D:\\Project\\Java\\SpringTesting\\src\\main\\resources\\jsonFiles\\data.json");
             Path path = Paths.get("src/main/resources/jsonFiles/", "pefindo1.json");
             File jsonFile = path.toFile();
             JsonNode jsonNode = objectMapper.readTree(jsonFile);
+            System.out.println();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void testJsonNodeReadFileXml() {
+        try {
+            Path path = Paths.get("src/main/resources/xmlFiles/", "file1.xml");
+            File jsonFile = path.toFile();
+            JsonNode jsonNode = xmlMapper.readTree(jsonFile);
+            System.out.println("Count");
+            System.out.println(jsonNode.get("operation").size());
             System.out.println();
         } catch (Exception e) {
             e.printStackTrace();
@@ -851,17 +856,28 @@ public class AppService {
     }
 
     // file
-    private void base64ToPdf() throws Exception {
+    private void base64ToFile() throws Exception {
         Path path = Paths.get("src/main/resources/base64file/", "base64.txt");
         String base64 = new String(Files.readAllBytes(path));
         byte[] fileByte = Base64.getDecoder().decode(base64);
 
         // write
-        FileOutputStream outputStream = new FileOutputStream("C:\\Users\\arisa\\Downloads\\result.pdf");
+        String extension = "xlsx";
+        FileOutputStream outputStream = new FileOutputStream("C:\\Users\\arisa\\Downloads\\result." + extension);
         outputStream.write(fileByte);
         outputStream.close();
 
         System.out.println("base64ToPdf done");
     }
+    private void fileToBase64() throws Exception {
+        Path path = Paths.get("src/main/resources/base64file/", "file.pdf");
+        byte[] base64Byte = Base64.getEncoder().encode(Files.readAllBytes(path));
 
+        // write
+        FileOutputStream outputStream = new FileOutputStream("src/main/resources/base64file/base64out.txt");
+        outputStream.write(base64Byte);
+        outputStream.close();
+
+        System.out.println("fileToBase64 done");
+    }
 }
